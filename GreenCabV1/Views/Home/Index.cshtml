@@ -1,0 +1,365 @@
+﻿@{
+	ViewData["Title"] = "Home Page";
+	Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>GreenCar</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="~/assets/css/web-fonts-with-css/css/fontawesome-all.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="~/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="~/assets/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="~/assets/css/full-slider.css">
+	<link rel="stylesheet" type="text/css" href="~/assets/css/style.css">
+
+
+	
+
+</head>
+<body id="main">
+	<div class="wrapper">
+		<!-- NAVBAR================================================== -->
+		 <partial name="_header" /> 
+		<!-- NAVBAR END================================================== -->
+
+		<div class="slider-section">
+			<div class="slider">
+				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+					<ol class="carousel-indicators">
+						<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+					</ol>
+					<div class="carousel-inner" role="listbox">
+						<!-- Slide One - Set the background image for this slide in the line below -->
+						<div class="carousel-item active" style="background-image: url('images/carpool-banner-1.jpg');">
+						</div>
+						<!-- Slide Two - Set the background image for this slide in the line below -->
+						<div class="carousel-item" style="background-image: url('assets/images/carpool-banner-2.jpg');">
+							<!--<div class="carousel-caption d-none d-md-block">
+							  <h3>Second Slide</h3>
+							  <p>This is a description for the second slide.</p>
+							</div>-->
+						</div>
+						<!-- Slide Three - Set the background image for this slide in the line below -->
+						<div class="carousel-item" style="background-image: url('/assets/images/carpool-banner-3.jpg');">
+						</div>
+					</div>
+					<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+			</div>
+			<div class="form-section">
+				<div class="slider-frm">
+					<form action="" method="post">
+						<div class="form-group radio-btn">
+							<span>Carporate carpool </span>
+						</div>
+						<div class="row">
+							<div class="col-xs-12 col-sm-12">
+								<div class="form-group">
+									<input type="text" name="leaving" class="form-control" id="leaving" placeholder="Name">
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-12">
+								<div class="form-group">
+									<input type="text" name="going" class="form-control" id="going" placeholder="Phone">
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-6">
+								<div class="form-group clearfix">
+									<!--<div class="frm-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>-->
+									<input type="text" name="going" class="form-control " id="usr" placeholder="Email">
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-6">
+								<div class="form-group clearfix">
+									<!--<div class="frm-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>-->
+									<input type="text" name="going" class="form-control " id="usr" placeholder="Organization">
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-6">
+								<div class="form-group clearfix">
+									<select class="form-control">
+										<option>No of Employee</option>
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+										<option>4</option>
+										<option>5</option>
+										<option>6</option>
+										<option>7</option>
+										<option>8</option>
+										<option>9</option>
+										<option>10</option>
+										<option>11</option>
+										<option>12</option>
+										<option>13</option>
+										<option>14</option>
+										<option>15</option>
+										<option>16</option>
+										<option>17</option>
+										<option>18</option>
+										<option>19</option>
+										<option>20</option>
+										<option>21</option>
+										<option>22</option>
+										<option>23</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-6">
+								<div class="form-group clearfix">
+									<input type="text" name="going" class="form-control " id="usr" placeholder="City">
+								</div>
+							</div>
+
+							<div class="col-xs-12 col-sm-12">
+								<div class="form-group clearfix">
+									<textarea class="banner-form" cols="10" rows="5" placeholder="comments"></textarea>
+								</div>
+							</div>
+
+							<div class="col-xs-12 col-sm-12">
+								<button type="submit" name="submit" class="form-control btn">Submit Enquiry</button>
+								<span class="proceeding">By proceeding, I agree to the <a href="#">term and condition</a></span>
+							</div>
+						</div>
+					</form>
+				</div>
+
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<div class="services-section">
+			<div class="container ">
+				<div class="row services">
+					<div class="col-md-2"></div>
+					<div class="col-md-8">
+						<h1>Intelligent Carpooling software made for smart corporate</h1>
+						<p class="services-parag">GreenCar is world's largest not for profit carpooling organization. we offer Enterprise-level ridesharing software for corporate commuters. It offers intelligent ride sharing application to improve mobility among fellow workers.</p>
+					</div>
+					<div class="col-md-2"></div>
+				</div>
+				<div class="row">
+					<div class="col-md-3 col-sm-6 icons">
+						<img src="assets/images/icon-show-you-care.jpg" alt="Peace-of-mind Icon">
+						<div class="services-name">
+							<h2>Show You Care</h2>
+							<p>Less vehicles on road means less Co2 emissions. Besides helping environment it help boost your brand image.</p>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6 icons">
+						<img src="assets/images/icon-easy.jpg" alt="Easy Icon">
+						<div class="services-name">
+							<h2>Ready-Setup-Go</h2>
+							<p>Our application is ready to run instantly, Greencar provides a advanced carpooling software with ultrafast map technology.</p>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6 icons">
+						<img src="assets/images/icon-better-productivity.jpg" alt="Economic Icon">
+						<div class="services-name">
+							<h2>Better Productvity</h2>
+							<p>Employees who carpool have less commute-related stress, develop synergies and loyalty toward your company.</p>
+						</div>
+					</div>
+
+					<div class="col-md-3 col-sm-6 icons">
+						<img src="assets/images/icon-easy.jpg" alt="Easy Icon">
+						<div class="services-name">
+							<h2>Fully customized UI</h2>
+							<p>Advance interface allows using GreenCar as your own carpooling platform. UI can be customized as per requirement. </p>
+						</div>
+					</div>
+				</div>
+				<div class="row" style="padding-top:40px;">
+
+					<div class="col-md-3 col-sm-6 icons">
+						<img src="assets/images/icon-insightful-analytics.jpg" alt="Easy Icon">
+						<div class="services-name">
+							<h2>Insightful Analytics</h2>
+							<p>Provides customized reports allowing you to track members registered, rides shared and overall statistical data.</p>
+						</div>
+					</div>
+
+
+					<div class="col-md-3 col-sm-6 icons">
+						<img src="assets/images/icon-peace-of-mind.jpg" alt="Peace-of-mind Icon">
+						<div class="services-name">
+							<h2>Peace of mind</h2>
+							<p>Experience Absolute Peace of Mind while traveling with your colleagues and you need not worry about parking hassles.</p>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6 icons">
+						<img src="assets/images/icon-varified.jpg" alt="Varified Icon">
+						<div class="services-name">
+							<h2>All colleagues on a map</h2>
+							<p>GreenCar connects co-workers by mapping nearby colleagues geographically to help establishing carpools to and from work</p>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6 icons">
+						<img src="assets/images/icon-economic.jpg" alt="Economic Icon">
+						<div class="services-name">
+							<h2>Cost effective</h2>
+							<p>Carpooling or ridesharing is absolutely cost-effective. While you save the environment you save valuable money also.</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!--<div class="newsletter-section1">
+			<div class="container">
+				<div class="text1">
+					<a href="corporate-carpool.php">Know more</a>
+				</div>
+			</div>
+		</div>-->
+		<div class="owner-section">
+			<div class="owner-img1">
+				<div class="corporate-text">
+					<h1>To know more Please write us</h1>
+					<p><span style="text-decoration:underline;">greencarcarpool@gmail.com</span><br>for customised carpool option for your organisation.</p>
+					<!--<a href="#">get started</a>-->
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="parking-charges-section">
+				<div class="charges ">
+					<table class="table">
+						<div class="table-responsive">
+							<h2>Case study on saving</h2>
+							<tr>
+								<th colspan="2"></th>
+								<th colspan="2">Total commuting cost</th>
+								<th>Bearer</th>
+							</tr>
+							<tr>
+								<td style="text-align: center;">A</td>
+								<td style="text-align: center;">B</td>
+								<td>Parking charges for car A</td>
+								<td>Rs 4000 p.m</td>
+								<td>Company</td>
+							</tr>
+							<tr>
+								<td rowspan="4">
+									<img src="images/car.jpg">
+								</td>
+								<td rowspan="4">
+									<img src="images/car.jpg">
+								</td>
+								<td>Parking charges for car B</td>
+								<td>Rs 4000 p.m</td>
+								<td>Company</td>
+							</tr>
+							<tr>
+								<td>Fuel charges of car A</td>
+								<td>Rs 8000 p.m</td>
+								<td>Employee A</td>
+							</tr>
+							<tr>
+								<td>Fuel charges of car B</td>
+								<td>Rs 8000 p.m</td>
+								<td>Employee B</td>
+							</tr>
+							<tr>
+								<td>Total</td>
+								<td>Rs 24000 p.m</td>
+								<td>Employee 16000 Company 4000</td>
+							</tr>
+						</div>
+					</table>
+
+					<table class="table">
+						<div class="table-responsive">
+							<tr>
+								<th colspan="2"></th>
+								<th colspan="2">Total commuting cost</th>
+								<th>Bearer</th>
+							</tr>
+							<tr>
+								<td colspan="2" style="text-align: center;">A and B carpool</td>
+								<td>Parking charges for car A</td>
+								<td>Rs 4000 p.m</td>
+								<td>Company</td>
+							</tr>
+							<tr>
+								<td colspan="2" rowspan="2">
+									<img src="images/car.jpg">
+								</td>
+
+								<td>Fuel charges of car</td>
+								<td>Rs 2750 p.m</td>
+								<td>Employee A</td>
+							</tr>
+
+							<tr>
+								<td>Total</td>
+								<td>Rs 6750 p.m</td>
+								<td>Employee 8000 Company 4000</td>
+							</tr>
+							<p>* Assuming 30km/day, Rs 70/litre, 22 work days in a month and 12km/litre</p>
+							<tr>
+								<td class="carpoolcost" colspan="5">If 40,000 cars go out of road as a result of carpool than annual saving of fuel will be INR 384 Crores ( INR 4000 per month x 12 months x 40,000 cars ) </td>
+							</tr>
+						</div>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="newsletter-section">
+			<div class="container">
+				<div class="newsletter">
+					<span>Sign up for newsletter</span>
+					<span><input type="text" name="email" placeholder="Enter your email"></span>
+					<a href="#">Submit</a>
+				</div>
+			</div>
+		</div>
+		<!-- FOOTER================================================== -->
+		<partial name="footer" />
+		<!-- FOOTER END============================================== -->
+	</div>
+
+
+	<script src="~/assets/js/jquery.min.js"></script>
+	<script src="~/assets/js/bootstrap.bundle.min.js"></script>
+	<!--<script>
+		$(document).ready(function(){
+			$(".nav-icon").click(function(){
+				$(".add-menu").toggle();
+			});
+		});
+
+	</script>-->
+	<script>
+		function openNav() {
+			document.getElementById("mySidenav").style.width = "350px";
+			document.getElementById("main").style.marginRight = "0px";
+		}
+
+		function closeNav() {
+			document.getElementById("mySidenav").style.width = "0";
+			document.getElementById("main").style.marginRight = "0";
+		}
+
+
+		
+
+
+
+	</script>
+
+</body>
+</html>

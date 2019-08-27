@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"] - GreenCabV1</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="~/assets/css/web-fonts-with-css/css/fontawesome-all.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="~/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="~/assets/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="~/assets/css/full-slider.css">
+	<link rel="stylesheet" type="text/css" href="~/assets/css/style.css">
+
+
+	
+</head>
+<body id="main">
+	<div class="wrapper">
+		<partial name="_header" />
+
+
+
+		@RenderBody()
+
+
+		<partial name="footer" />
+
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script src="~/assets/js/jquery.min.js"></script>
+	<script src="~/assets/js/bootstrap.bundle.min.js"></script>
+	<!--<script>
+		$(document).ready(function(){
+			$(".nav-icon").click(function(){
+				$(".add-menu").toggle();
+			});
+		});
+
+	</script>-->
+	<script>
+		function openNav() {
+			document.getElementById("mySidenav").style.width = "350px";
+			document.getElementById("main").style.marginRight = "0px";
+		}
+
+		function closeNav() {
+			document.getElementById("mySidenav").style.width = "0";
+			document.getElementById("main").style.marginRight = "0";
+		}
+	</script>
+	
+	@RenderSection("Scripts", required: false)
+</body>
+</html>

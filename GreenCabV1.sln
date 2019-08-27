@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29201.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenCabV1", "GreenCabV1\GreenCabV1.csproj", "{0BAC3AE1-F6DA-4D61-8C7F-6444C64A75FA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0BAC3AE1-F6DA-4D61-8C7F-6444C64A75FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BAC3AE1-F6DA-4D61-8C7F-6444C64A75FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BAC3AE1-F6DA-4D61-8C7F-6444C64A75FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BAC3AE1-F6DA-4D61-8C7F-6444C64A75FA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FEF06972-71D6-44A1-BA04-4BBD0A95AFD3}
+	EndGlobalSection
+EndGlobal
