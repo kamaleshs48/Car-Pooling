@@ -3,9 +3,12 @@
 	ViewData["Title"] = "dailycarpool";
 	Layout = "~/Views/Shared/_LayoutMainV1.cshtml";
 }
-	<script src='https://maps.googleapis.com/maps/api/js?v=3&amp;libraries=places&key=AIzaSyDD7puqlz8_uRxO2cL_EyXi7xWE3Vkm-m8'></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src='https://maps.googleapis.com/maps/api/js?v=3&amp;libraries=places&key=AIzaSyDD7puqlz8_uRxO2cL_EyXi7xWE3Vkm-m8'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="assets/css/full-slider.css">
+
+@model DailyCabModels
+
 <div class="slider-section">
 	<div class="slider">
 		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -46,120 +49,122 @@
 				<div class="col-md-5 slider-frm">
 
 
+					
 
-
-					<form action="" method="post">
-						<div class="form-group radio-btn">
-							<span>I am a </span>
-							<input type="radio" name="Radio">&nbsp; Male &nbsp;
-							<input type="radio" name="Radio">&nbsp; Female
-						</div>
-						<div class="form-group form-group1">
-							<div class="frm-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-							<input type="text" name="leaving" class="form-control" id="txtLeaving" placeholder="Leaving">
-						</div>
-						<div class="form-group">
-							<div class="frm-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-							<input type="text" name="going" class="form-control" id="txtDestitaion" placeholder="Going to">
-						</div>
-						<div class="form-group form-group1">
-							<input type="text" name="reaching" class="contact-frm" id="usr" placeholder="Reaching time" disabled>
-							<select class="contact-frm">
-								<option>Hour</option>
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-								<option>6</option>
-								<option>7</option>
-								<option>8</option>
-								<option>9</option>
-								<option>10</option>
-								<option>11</option>
-								<option>12</option>
-								<option>13</option>
-								<option>14</option>
-								<option>15</option>
-								<option>16</option>
-								<option>17</option>
-								<option>18</option>
-								<option>19</option>
-								<option>20</option>
-								<option>21</option>
-								<option>22</option>
-								<option>23</option>
-							</select>
-							<select class="contact-frm">
-								<option>Minute</option>
-								<option>5</option>
-								<option>10</option>
-								<option>15</option>
-								<option>20</option>
-								<option>25</option>
-								<option>30</option>
-								<option>35</option>
-								<option>40</option>
-								<option>45</option>
-								<option>50</option>
-								<option>55</option>
-							</select>
-						</div>
-						<div class="form-group">
-							<input type="text" name="reaching" class="contact-frm" id="usr" placeholder="Departure time" disabled>
-							<select class="contact-frm">
-								<option>Hour</option>
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-								<option>6</option>
-								<option>7</option>
-								<option>8</option>
-								<option>9</option>
-								<option>10</option>
-								<option>11</option>
-								<option>12</option>
-								<option>13</option>
-								<option>14</option>
-								<option>15</option>
-								<option>16</option>
-								<option>17</option>
-								<option>18</option>
-								<option>19</option>
-								<option>20</option>
-								<option>21</option>
-								<option>22</option>
-								<option>23</option>
-							</select>
-							<select class="contact-frm">
-								<option>Minute</option>
-								<option>5</option>
-								<option>10</option>
-								<option>15</option>
-								<option>20</option>
-								<option>25</option>
-								<option>30</option>
-								<option>35</option>
-								<option>40</option>
-								<option>45</option>
-								<option>50</option>
-								<option>55</option>
-							</select>
-						</div>
-						<span class="frm-text">Greencar is corrently only available for 5 days for a week (Monday to Friday)</span>
-						<div class="form-group form-group1">
-							<div class="frm-icon"><i class="fa fa-wheelchair" aria-hidden="true"></i></div>
-							<input type="text" name="seat" class="form-control" id="usr" placeholder="Number of seats">
-						</div>
-						<div class="form-group">
-							<div class="frm-icon"><i class="fa fa-inr" aria-hidden="true"></i></div>
-							<input type="text" name="cost" class="form-control" id="usr" placeholder="Estimated cost / month* ">
-						</div>
-						<button type="submit" name="submit" class="form-control btn">Submit Enquiry</button>
-						<span class="term-condition">Or <a href="#">sign up</a> with your rider account.<br><span class="proceeding">By proceeding, I agree to the <a href="#">term and condition</a></span></span>
-					</form>
+						<form action="/daily-carpool" method="post">
+							<div class="form-group radio-btn">
+								<span>I am a </span>
+								<input type="radio" name="Radio">&nbsp; Male &nbsp;
+								<input type="radio" name="Radio">&nbsp; Female
+							</div>
+							<div class="form-group form-group1">
+								<div class="frm-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+								<input asp-for="Source" class="form-control" placeholder="Leaving" />
+								
+							</div>
+							<div class="form-group">
+								<div class="frm-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+								
+								<input asp-for="Destination" class="form-control" placeholder="Going to" />
+							</div>
+							<div class="form-group form-group1">
+								<input type="text" name="reaching" class="contact-frm" id="usr" placeholder="Reaching time" disabled>
+								<select class="contact-frm">
+									<option>Hour</option>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option>
+									<option>9</option>
+									<option>10</option>
+									<option>11</option>
+									<option>12</option>
+									<option>13</option>
+									<option>14</option>
+									<option>15</option>
+									<option>16</option>
+									<option>17</option>
+									<option>18</option>
+									<option>19</option>
+									<option>20</option>
+									<option>21</option>
+									<option>22</option>
+									<option>23</option>
+								</select>
+								<select class="contact-frm">
+									<option>Minute</option>
+									<option>5</option>
+									<option>10</option>
+									<option>15</option>
+									<option>20</option>
+									<option>25</option>
+									<option>30</option>
+									<option>35</option>
+									<option>40</option>
+									<option>45</option>
+									<option>50</option>
+									<option>55</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<input type="text" name="reaching" class="contact-frm" id="usr" placeholder="Departure time" disabled>
+								<select class="contact-frm">
+									<option>Hour</option>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option>
+									<option>9</option>
+									<option>10</option>
+									<option>11</option>
+									<option>12</option>
+									<option>13</option>
+									<option>14</option>
+									<option>15</option>
+									<option>16</option>
+									<option>17</option>
+									<option>18</option>
+									<option>19</option>
+									<option>20</option>
+									<option>21</option>
+									<option>22</option>
+									<option>23</option>
+								</select>
+								<select class="contact-frm">
+									<option>Minute</option>
+									<option>5</option>
+									<option>10</option>
+									<option>15</option>
+									<option>20</option>
+									<option>25</option>
+									<option>30</option>
+									<option>35</option>
+									<option>40</option>
+									<option>45</option>
+									<option>50</option>
+									<option>55</option>
+								</select>
+							</div>
+							<span class="frm-text">Greencar is corrently only available for 5 days for a week (Monday to Friday)</span>
+							<div class="form-group form-group1">
+								<div class="frm-icon"><i class="fa fa-wheelchair" aria-hidden="true"></i></div>
+								<input type="text" name="seat" class="form-control" id="usr" placeholder="Number of seats">
+							</div>
+							<div class="form-group">
+								<div class="frm-icon"><i class="fa fa-inr" aria-hidden="true"></i></div>
+								<input type="text" name="cost" class="form-control" id="usr" placeholder="Estimated cost / month* ">
+							</div>
+							<button type="submit" name="submit" class="form-control btn">Submit Enquiry</button>
+							<span class="term-condition">Or <a href="#">sign up</a> with your rider account.<br><span class="proceeding">By proceeding, I agree to the <a href="#">term and condition</a></span></span>
+						</form>
 				</div>
 			</div>
 		</div>
@@ -259,73 +264,73 @@
 </div>
 
 <script>
-	 $(document).ready(function () {
-                google.maps.event.addDomListener(window, 'load', initialize);
-            });
+	$(document).ready(function () {
+		google.maps.event.addDomListener(window, 'load', initialize);
+	});
 
 
 
-	  function CalculateDistance() {
-            var service = new google.maps.DistanceMatrixService();
-            service.getDistanceMatrix({
-                origins: [$("#txtLeaving").val()],
-                destinations: [$("#txtDestitaion").val()],
-                travelMode: google.maps.TravelMode.DRIVING,
-                unitSystem: google.maps.UnitSystem.METRIC,
-                avoidHighways: false,
-                avoidTolls: false
-            }, function (response, status) {
-                if (status == google.maps.DistanceMatrixStatus.OK && response.rows[0].elements[0].status != "ZERO_RESULTS") {
-                    var distance = response.rows[0].elements[0].distance.value;
-                    var duration = response.rows[0].elements[0].duration.text;
-                    // $("#txtCast").val(parseInt(distance / 1000))
+	function CalculateDistance() {
+		var service = new google.maps.DistanceMatrixService();
+		service.getDistanceMatrix({
+			origins: [$("#Source").val()],
+			destinations: [$("#Destination").val()],
+			travelMode: google.maps.TravelMode.DRIVING,
+			unitSystem: google.maps.UnitSystem.METRIC,
+			avoidHighways: false,
+			avoidTolls: false
+		}, function (response, status) {
+			if (status == google.maps.DistanceMatrixStatus.OK && response.rows[0].elements[0].status != "ZERO_RESULTS") {
+				var distance = response.rows[0].elements[0].distance.value;
+				var duration = response.rows[0].elements[0].duration.text;
+				// $("#txtCast").val(parseInt(distance / 1000))
 
 
-                    var _Distance = parseInt(distance / 1000);
-                    var _BaseFare = 40; var _Days = 22;
-                    var _PriceKM = 3.5;
-                    var _TatalPrice = _Distance * 3.5 * 22 * 2 + (_BaseFare * 2 * 22);
-                    $("#txtCast").val(_TatalPrice)
+				var _Distance = parseInt(distance / 1000);
+				var _BaseFare = 40; var _Days = 22;
+				var _PriceKM = 3.5;
+				var _TatalPrice = _Distance * 3.5 * 22 * 2 + (_BaseFare * 2 * 22);
+				$("#txtCast").val(_TatalPrice)
 
-                    //  console.log(JSON.stringify(response))
-                    // var dvDistance = document.getElementById("dvDistance");
-                    //dvDistance.innerHTML = "";
-                    //dvDistance.innerHTML += "Distance: " + distance + "&nbsp;/&nbsp;";
-                    //dvDistance.innerHTML += "Duration:" + duration;
+				//  console.log(JSON.stringify(response))
+				// var dvDistance = document.getElementById("dvDistance");
+				//dvDistance.innerHTML = "";
+				//dvDistance.innerHTML += "Distance: " + distance + "&nbsp;/&nbsp;";
+				//dvDistance.innerHTML += "Duration:" + duration;
 
-                } else {
-                    //alert("Unable to find the distance via road.");
-                }
-            });
-        }
-
-
-
-            function initialize() {
-                //________________
+			} else {
+				//alert("Unable to find the distance via road.");
+			}
+		});
+	}
 
 
-                var options = {
 
-                    componentRestrictions: { country: "in" }
-                };
-
-                var input = document.getElementById('txtLeaving');
-                var autocomplete = new google.maps.places.Autocomplete(input, options);
-                google.maps.event.addListener(autocomplete, 'place_changed', function () {
-                    CalculateDistance();
-                });
-                //**************************
-                var input1 = document.getElementById('txtDestitaion');
-                var autocomplete1 = new google.maps.places.Autocomplete(input1, options);
-                google.maps.event.addListener(autocomplete1, 'place_changed', function () {
-                    CalculateDistance();
-                });
-                //**************************
-
-                //**************************
+	function initialize() {
+		//________________
 
 
-                //**************************
-            }
+		var options = {
+
+			componentRestrictions: { country: "in" }
+		};
+
+		var input = document.getElementById('Source');
+		var autocomplete = new google.maps.places.Autocomplete(input, options);
+		google.maps.event.addListener(autocomplete, 'place_changed', function () {
+			CalculateDistance();
+		});
+		//**************************
+		var input1 = document.getElementById('Destination');
+		var autocomplete1 = new google.maps.places.Autocomplete(input1, options);
+		google.maps.event.addListener(autocomplete1, 'place_changed', function () {
+			CalculateDistance();
+		});
+		//**************************
+
+		//**************************
+
+
+		//**************************
+	}
 </script>

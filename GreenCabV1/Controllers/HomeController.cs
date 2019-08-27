@@ -68,6 +68,17 @@ namespace GreenCabV1.Controllers
             return View();
         }
 
+
+        [HttpPost]
+        [ActionName("daily-carpool")]
+        public  IActionResult dailycarpool(DailyCabModels models)
+        {
+
+            return View();
+
+        }
+
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
