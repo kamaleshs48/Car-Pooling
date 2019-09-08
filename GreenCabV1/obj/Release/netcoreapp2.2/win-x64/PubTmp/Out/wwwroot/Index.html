@@ -1,0 +1,535 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>dailycarpool - GreenCabV1</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="assets/css/web-fonts-with-css/css/fontawesome-all.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/full-slider.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+
+	
+</head>
+<body id="main">
+	<div class="wrapper">
+		<div class="header-section">
+	<!---
+	<div class="top-header">
+		<div class="container">
+			<ul class="top-menu clearfix">
+				<li><a href="#">Login</a></li>
+				<li><a href="#">Register</a></li>
+			</ul>
+		</div>
+	</div>--->
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+		<div class="container">
+			<a class="navbar-brand" href="index">
+				<img src="assets/images/logo.png" width="150" height="30" alt="">
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto navbar-right">
+					<li class="nav-item active">
+						<a class="nav-link"    href="/corporate-carpool">
+							Corporate carpool
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+					<!--<li class="nav-item">
+					  <a class="nav-link" href="daily-carpool.php">Daily carpool</a>
+					</li>-->
+					<li class="nav-item">
+						<a class="nav-link"  href="/carpool">Monthly cab</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link"   href="/csr">CSR/SUPPORT</a>
+					</li>
+				</ul>
+			</div>
+			<div class="nav-icon sidenav" id="mySidenav">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+				<!--<a href="#"><img src="images/nav-icon.png" alt="Nav icon"></a>-->
+				<div class="add-menu">
+					<ul class="left-menu">
+						<li><a href="corporate-carpool">Carporate carpool</a></li>
+						<li><a href="aboutus">About greencar</a></li>
+						<li><a href="greencar-benefits">Benifits of using greencar</a></li>
+						<li><a href="support">Support the cause</a></li>
+						<li><a href="how-it-work">How it work</a></li>
+						<li><a href="contactus">Contact us</a></li>
+					</ul>
+				</div>
+			</div>
+			<div id="main">
+				<span class="menu-icon" style="font-size:30px;cursor:pointer;" onclick="openNav()"><img src="assets/images/nav-icon.png" alt="Nav icon"></span>
+			</div>
+		</div>
+	</nav>
+
+</div>
+
+
+
+		
+<script src='https://maps.googleapis.com/maps/api/js?v=3&amp;libraries=places&key=AIzaSyDD7puqlz8_uRxO2cL_EyXi7xWE3Vkm-m8'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="assets/css/full-slider.css">
+
+
+<style>
+	.input-validation-error
+	{
+		border-color:red!important;
+	}
+	.slider-frm {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: #6e727d !important;
+}
+</style>
+
+<div class="row">
+	<div class="col-md-7">
+		<div class="slider-section">
+
+			<div class="slider">
+				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+					<ol class="carousel-indicators">
+						<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+					</ol>
+					<div class="carousel-inner" role="listbox">
+						<!-- Slide One - Set the background image for this slide in the line below -->
+						<div class="carousel-item active" style="background-image: url('./assets//images/home-banner-1.jpg');">
+						</div>
+						<!-- Slide Two - Set the background image for this slide in the line below -->
+						<div class="carousel-item" style="background-image: url('./assets//images/home-banner-2.jpg');">
+							<!--<div class="carousel-caption d-none d-md-block">
+							  <h3>Second Slide</h3>
+							  <p>This is a description for the second slide.</p>
+							</div>-->
+						</div>
+						<!-- Slide Three - Set the background image for this slide in the line below -->
+						<div class="carousel-item" style="background-image: url('./assets/images/home-banner-3.jpg');">
+						</div>
+					</div>
+					<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-5">
+		<div class="slider-frm" style="width:95%!important;top:0px!important">
+			
+			<form action="/carpool" method="post">
+						<div class="form-group radio-btn">
+							<span>I am a </span>
+							<input type="radio" value="Male" checked data-val="true" data-val-required="The Sex field is required." id="Sex" name="Sex">&nbsp; Male &nbsp;
+							<input type="radio" value="Female" id="Sex" name="Sex">&nbsp; Female
+						</div>
+
+						<div class="form-group form-group1">
+
+							<input class="form-control" placeholder="Name" type="text" data-val="true" data-val-required="The Name field is required." id="Name" name="Name" value="" />
+
+						</div>
+
+						<div class="form-group form-group1">
+
+							<input class="form-control" placeholder="Email" type="email" data-val="true" data-val-email="The Email field is not a valid e-mail address." data-val-required="The Email field is required." id="Email" name="Email" value="" />
+
+						</div>
+						<div class="form-group form-group1">
+
+							<input class="form-control" placeholder="Official Email" type="text" id="Official" name="Official" value="" />
+
+						</div>
+						<div class="form-group form-group1">
+
+							<input class="form-control" placeholder="Mobile No" type="text" data-val="true" data-val-required="The MobileNo field is required." id="MobileNo" name="MobileNo" value="" />
+
+						</div>
+
+
+						<div class="form-group form-group1">
+							<div class="frm-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+							<input class="form-control" placeholder="Leaving" type="text" data-val="true" data-val-required="The Source field is required." id="Source" name="Source" value="" />
+
+						</div>
+						<div class="form-group">
+							<div class="frm-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+
+							<input class="form-control" placeholder="Going to" type="text" data-val="true" data-val-required="The Destination field is required." id="Destination" name="Destination" value="" />
+						</div>
+						<div class="form-group form-group1">
+							<input type="text" name="reaching" class="contact-frm" id="usr" placeholder="Reaching time" disabled>
+							<select class="contact-frm" data-val="true" data-val-required="The ReachingHour field is required." id="ReachingHour" name="ReachingHour">
+								<option value="">Hour</option>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+								<option>6</option>
+								<option>7</option>
+								<option>8</option>
+								<option>9</option>
+								<option>10</option>
+								<option>11</option>
+								<option>12</option>
+								<option>13</option>
+								<option>14</option>
+								<option>15</option>
+								<option>16</option>
+								<option>17</option>
+								<option>18</option>
+								<option>19</option>
+								<option>20</option>
+								<option>21</option>
+								<option>22</option>
+								<option>23</option>
+							</select>
+							<select class="contact-frm" data-val="true" data-val-required="The ReachingMinute field is required." id="ReachingMinute" name="ReachingMinute">
+								<option value="">Minute</option>
+								<option>5</option>
+								<option>10</option>
+								<option>15</option>
+								<option>20</option>
+								<option>25</option>
+								<option>30</option>
+								<option>35</option>
+								<option>40</option>
+								<option>45</option>
+								<option>50</option>
+								<option>55</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<input type="text" name="reaching" class="contact-frm" id="usr" placeholder="Departure time" disabled>
+							<select class="contact-frm" data-val="true" data-val-required="The DepartureHour field is required." id="DepartureHour" name="DepartureHour">
+								<option value="">Hour</option>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+								<option>6</option>
+								<option>7</option>
+								<option>8</option>
+								<option>9</option>
+								<option>10</option>
+								<option>11</option>
+								<option>12</option>
+								<option>13</option>
+								<option>14</option>
+								<option>15</option>
+								<option>16</option>
+								<option>17</option>
+								<option>18</option>
+								<option>19</option>
+								<option>20</option>
+								<option>21</option>
+								<option>22</option>
+								<option>23</option>
+							</select>
+
+
+
+
+							<select class="contact-frm" data-val="true" data-val-required="The DepartureMinute field is required." id="DepartureMinute" name="DepartureMinute">
+								<option value="">Minute</option>
+								<option>5</option>
+								<option>10</option>
+								<option>15</option>
+								<option>20</option>
+								<option>25</option>
+								<option>30</option>
+								<option>35</option>
+								<option>40</option>
+								<option>45</option>
+								<option>50</option>
+								<option>55</option>
+							</select>
+						</div>
+						<span class="frm-text">Greencar is corrently only available for 5 days for a week (Monday to Friday)</span>
+						<div class="form-group form-group1">
+							<div class="frm-icon"><i class="fa fa-wheelchair" aria-hidden="true"></i></div>
+							<input type="number" class="form-control" placeholder="Number of seats" data-val="true" data-val-required="The NoOfSeat field is required." id="NoOfSeat" name="NoOfSeat" value="">
+						</div>
+						<div class="form-group">
+							<div class="frm-icon"><i class="fa fa-inr" aria-hidden="true"></i></div>
+							<input type="number" class="form-control" placeholder="Estimated cost / month* " data-val="true" data-val-required="The EstimatedCast field is required." id="EstimatedCast" name="EstimatedCast" value="">
+						</div>
+						<button type="submit" name="submit" class="form-control btn">Submit Enquiry</button>
+						<span class="term-condition">Or <a href="#">sign up</a> with your rider account.<br><span class="proceeding">By proceeding, I agree to the <a href="#">term and condition</a></span></span>
+					</form>
+				
+
+		
+	</div>
+
+</div>
+
+
+
+<div class="services-section">
+	<div class="container services">
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6">
+				<h1>Benifits of greenCar</h1>
+				<p class="services-parag">
+					GreenCar is world’s largest not for profit car sharing company, now
+					introducing monthly fixed Cab pool service from your home to workplace
+				</p>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-3 icons">
+				<img src="assets/images/icon-varified.jpg" alt="Varified Icon">
+				<div class="services-name">
+					<h2>verified members</h2>
+					<p>verified profile and email<br>means additional security</p>
+				</div>
+			</div>
+			<div class="col-md-3 icons">
+				<img src="assets/images/icon-easy.jpg" alt="Easy Icon">
+				<div class="services-name">
+					<h2>Easy</h2>
+					<p>Mobile app is available on your fingure tips</p>
+				</div>
+			</div>
+			<div class="col-md-3 icons">
+				<img src="assets/images/icon-economic.jpg" alt="Economic Icon">
+				<div class="services-name">
+					<h2>Economic</h2>
+					<p>Cost effective as you are sharing it with copassengers</p>
+				</div>
+			</div>
+			<div class="col-md-3 icons">
+				<img src="assets/images/icon-peace-of-mind.jpg" alt="Peace-of-mind Icon">
+				<div class="services-name">
+					<h2>Peace of mind</h2>
+					<p>Go anywhere, no hassel of parking or driving stress</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="newsletter-section">
+	<div class="container">
+		<div class="text1">
+			<h1>Search in Carpool</h1>
+			<a href="#">Proceed</a>
+		</div>
+	</div>
+</div>
+<div class="owner-section">
+	<div class="owner-img">
+		<div class="text">
+			<h1>Are you a car owner?</h1>
+			<p>Join the GreenCar<br>fleet and earn</p>
+			<a href="#">get started</a>
+		</div>
+	</div>
+</div>
+<div class="greencar-app-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-7 col-sm-12 get-greencar-app">
+				<div class="get-app">
+					<h2>Get GreenCar app</h2>
+					<p>A new and awesome GreenCar mobile app is coming soon.</p>
+					<ul class="app-icon clearfix">
+						<li><img src="assets/images/googleAppStore.png" alt="googleAppStore"></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-5 col-sm-12">
+				<div class="convence-img">
+					<img src="assets/images/mobile.jpg" alt="images">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="newsletter-section">
+	<div class="container">
+		<div class="newsletter">
+			<span>Sign up for newsletter</span>
+			<span><input type="text" name="email" placeholder="Enter your email"></span>
+			<a href="#">Submit</a>
+		</div>
+	</div>
+</div>
+
+<script>
+	$(document).ready(function () {
+		google.maps.event.addDomListener(window, 'load', initialize);
+	});
+
+
+
+	function CalculateDistance() {
+		var service = new google.maps.DistanceMatrixService();
+		service.getDistanceMatrix({
+			origins: [$("#Source").val()],
+			destinations: [$("#Destination").val()],
+			travelMode: google.maps.TravelMode.DRIVING,
+			unitSystem: google.maps.UnitSystem.METRIC,
+			avoidHighways: false,
+			avoidTolls: false
+		}, function (response, status) {
+			if (status == google.maps.DistanceMatrixStatus.OK && response.rows[0].elements[0].status != "ZERO_RESULTS") {
+				var distance = response.rows[0].elements[0].distance.value;
+				var duration = response.rows[0].elements[0].duration.text;
+				// $("#txtCast").val(parseInt(distance / 1000))
+
+
+				var _Distance = parseInt(distance / 1000);
+				var _BaseFare = 40; var _Days = 22;
+				var _PriceKM = 3.5;
+				var _TatalPrice = _Distance * 3.5 * 22 * 2 + (_BaseFare * 2 * 22);
+				$("#EstimatedCast").val(_TatalPrice)
+
+				//  console.log(JSON.stringify(response))
+				// var dvDistance = document.getElementById("dvDistance");
+				//dvDistance.innerHTML = "";
+				//dvDistance.innerHTML += "Distance: " + distance + "&nbsp;/&nbsp;";
+				//dvDistance.innerHTML += "Duration:" + duration;
+
+			} else {
+				//alert("Unable to find the distance via road.");
+			}
+		});
+	}
+
+
+
+	function initialize() {
+		//________________
+
+
+		var options = {
+
+			componentRestrictions: { country: "in" }
+		};
+
+		var input = document.getElementById('Source');
+		var autocomplete = new google.maps.places.Autocomplete(input, options);
+		google.maps.event.addListener(autocomplete, 'place_changed', function () {
+			CalculateDistance();
+		});
+		//**************************
+		var input1 = document.getElementById('Destination');
+		var autocomplete1 = new google.maps.places.Autocomplete(input1, options);
+		google.maps.event.addListener(autocomplete1, 'place_changed', function () {
+			CalculateDistance();
+		});
+		//**************************
+
+		//**************************
+
+
+		//**************************
+	}
+</script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js" crossorigin="anonymous" integrity="sha256-F6h55Qw6sweK+t7SiOJX+2bpSAa3b/fnlrVCJvmEj1A=">
+    </script>
+<script>(window.jQuery && window.jQuery.validator||document.write("\u003Cscript src=\u0022\/lib\/jquery-validation\/dist\/jquery.validate.min.js\u0022 crossorigin=\u0022anonymous\u0022 integrity=\u0022sha256-F6h55Qw6sweK\u002Bt7SiOJX\u002B2bpSAa3b\/fnlrVCJvmEj1A=\u0022\u003E\u003C\/script\u003E"));</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js" crossorigin="anonymous" integrity="sha256-9GycpJnliUjJDVDqP0UEu/bsm9U+3dnQUH8+3W10vkY=">
+    </script>
+<script>(window.jQuery && window.jQuery.validator && window.jQuery.validator.unobtrusive||document.write("\u003Cscript src=\u0022\/lib\/jquery-validation-unobtrusive\/jquery.validate.unobtrusive.min.js\u0022 crossorigin=\u0022anonymous\u0022 integrity=\u0022sha256-9GycpJnliUjJDVDqP0UEu\/bsm9U\u002B3dnQUH8\u002B3W10vkY=\u0022\u003E\u003C\/script\u003E"));</script>
+
+
+
+
+		<div class="footer-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 footer">
+                <h2 class="footer-navigation-hd">Links</h2>
+                <ul class="footer-navigation">
+                    <li><a href="/aboutus">About greencar</a></li>
+                    <li><a href="/contactus">Contact us</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 footer">
+                <h2 class="footer-navigation-hd"></h2>
+                <ul class="footer-navigation">
+                    <li><a href="/terms">Term and conditions</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <ul class="app-icon1 clearfix">
+                    <li><img src="assets/images/googleAppStore.png" alt="googleAppStore"></li>
+                </ul>
+                <ul class="app-icon clearfix">
+                    <li><a href="https://www.facebook.com/greencarindia"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="https://twitter.com/greencarindia"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="https://plus.google.com/u/0/100677635268705914092/posts"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="allright-reserved">
+                    <p>Copyright &copy; 2019 Greencar.ngo. All right reserved</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
+	<!--<script>
+		$(document).ready(function(){
+			$(".nav-icon").click(function(){
+				$(".add-menu").toggle();
+			});
+		});
+
+	</script>-->
+	<script>
+		function openNav() {
+			document.getElementById("mySidenav").style.width = "350px";
+			document.getElementById("main").style.marginRight = "0px";
+		}
+
+		function closeNav() {
+			document.getElementById("mySidenav").style.width = "0";
+			document.getElementById("main").style.marginRight = "0";
+		}
+	</script>
+	
+	
+</body>
+</html>

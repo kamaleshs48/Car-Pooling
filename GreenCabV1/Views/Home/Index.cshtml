@@ -1,30 +1,13 @@
-﻿@{
-	ViewData["Title"] = "Home Page";
-	Layout = null;
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutMainV1.cshtml";
+
 }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>GreenCar</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="~/assets/css/web-fonts-with-css/css/fontawesome-all.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="~/assets/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="~/assets/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="~/assets/css/full-slider.css">
-	<link rel="stylesheet" type="text/css" href="~/assets/css/style.css">
 
 
-	
 
-</head>
-<body id="main">
-	<div class="wrapper">
-		<!-- NAVBAR================================================== -->
-		 <partial name="_header" /> 
-		<!-- NAVBAR END================================================== -->
 
 		<div class="slider-section">
 			<div class="slider">
@@ -36,17 +19,17 @@
 					</ol>
 					<div class="carousel-inner" role="listbox">
 						<!-- Slide One - Set the background image for this slide in the line below -->
-						<div class="carousel-item active" style="background-image: url('images/carpool-banner-1.jpg');">
+						<div class="carousel-item active" style="background-image: url('./asstes/images/home-banner-1.jpg');">
 						</div>
 						<!-- Slide Two - Set the background image for this slide in the line below -->
-						<div class="carousel-item" style="background-image: url('assets/images/carpool-banner-2.jpg');">
+						<div class="carousel-item" style="background-image: url('./asstes/images/home-banner-2.jpg');">
 							<!--<div class="carousel-caption d-none d-md-block">
 							  <h3>Second Slide</h3>
 							  <p>This is a description for the second slide.</p>
 							</div>-->
 						</div>
 						<!-- Slide Three - Set the background image for this slide in the line below -->
-						<div class="carousel-item" style="background-image: url('/assets/images/carpool-banner-3.jpg');">
+						<div class="carousel-item" style="background-image: url('./asstes/images/home-banner-3.jpg');">
 						</div>
 					</div>
 					<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -68,12 +51,12 @@
 						<div class="row">
 							<div class="col-xs-12 col-sm-12">
 								<div class="form-group">
-									<input type="text" name="leaving" class="form-control" id="leaving" placeholder="Name">
+									<input type="text" name="leaving" class="form-control" id="usr" placeholder="Name">
 								</div>
 							</div>
 							<div class="col-xs-12 col-sm-12">
 								<div class="form-group">
-									<input type="text" name="going" class="form-control" id="going" placeholder="Phone">
+									<input type="text" name="going" class="form-control" id="usr" placeholder="Phone">
 								</div>
 							</div>
 							<div class="col-xs-12 col-sm-6">
@@ -153,21 +136,21 @@
 				</div>
 				<div class="row">
 					<div class="col-md-3 col-sm-6 icons">
-						<img src="assets/images/icon-show-you-care.jpg" alt="Peace-of-mind Icon">
+						<img src="images/icon-show-you-care.jpg" alt="Peace-of-mind Icon">
 						<div class="services-name">
 							<h2>Show You Care</h2>
 							<p>Less vehicles on road means less Co2 emissions. Besides helping environment it help boost your brand image.</p>
 						</div>
 					</div>
 					<div class="col-md-3 col-sm-6 icons">
-						<img src="assets/images/icon-easy.jpg" alt="Easy Icon">
+						<img src="images/icon-easy.jpg" alt="Easy Icon">
 						<div class="services-name">
 							<h2>Ready-Setup-Go</h2>
 							<p>Our application is ready to run instantly, Greencar provides a advanced carpooling software with ultrafast map technology.</p>
 						</div>
 					</div>
 					<div class="col-md-3 col-sm-6 icons">
-						<img src="assets/images/icon-better-productivity.jpg" alt="Economic Icon">
+						<img src="images/icon-better-productivity.jpg" alt="Economic Icon">
 						<div class="services-name">
 							<h2>Better Productvity</h2>
 							<p>Employees who carpool have less commute-related stress, develop synergies and loyalty toward your company.</p>
@@ -175,7 +158,7 @@
 					</div>
 
 					<div class="col-md-3 col-sm-6 icons">
-						<img src="assets/images/icon-easy.jpg" alt="Easy Icon">
+						<img src="images/icon-easy.jpg" alt="Easy Icon">
 						<div class="services-name">
 							<h2>Fully customized UI</h2>
 							<p>Advance interface allows using GreenCar as your own carpooling platform. UI can be customized as per requirement. </p>
@@ -185,7 +168,7 @@
 				<div class="row" style="padding-top:40px;">
 
 					<div class="col-md-3 col-sm-6 icons">
-						<img src="assets/images/icon-insightful-analytics.jpg" alt="Easy Icon">
+						<img src="images/icon-insightful-analytics.jpg" alt="Easy Icon">
 						<div class="services-name">
 							<h2>Insightful Analytics</h2>
 							<p>Provides customized reports allowing you to track members registered, rides shared and overall statistical data.</p>
@@ -194,21 +177,21 @@
 
 
 					<div class="col-md-3 col-sm-6 icons">
-						<img src="assets/images/icon-peace-of-mind.jpg" alt="Peace-of-mind Icon">
+						<img src="images/icon-peace-of-mind.jpg" alt="Peace-of-mind Icon">
 						<div class="services-name">
 							<h2>Peace of mind</h2>
 							<p>Experience Absolute Peace of Mind while traveling with your colleagues and you need not worry about parking hassles.</p>
 						</div>
 					</div>
 					<div class="col-md-3 col-sm-6 icons">
-						<img src="assets/images/icon-varified.jpg" alt="Varified Icon">
+						<img src="images/icon-varified.jpg" alt="Varified Icon">
 						<div class="services-name">
 							<h2>All colleagues on a map</h2>
 							<p>GreenCar connects co-workers by mapping nearby colleagues geographically to help establishing carpools to and from work</p>
 						</div>
 					</div>
 					<div class="col-md-3 col-sm-6 icons">
-						<img src="assets/images/icon-economic.jpg" alt="Economic Icon">
+						<img src="images/icon-economic.jpg" alt="Economic Icon">
 						<div class="services-name">
 							<h2>Cost effective</h2>
 							<p>Carpooling or ridesharing is absolutely cost-effective. While you save the environment you save valuable money also.</p>
@@ -327,14 +310,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- FOOTER================================================== -->
-		<partial name="footer" />
-		<!-- FOOTER END============================================== -->
-	</div>
-
-
-	<script src="~/assets/js/jquery.min.js"></script>
-	<script src="~/assets/js/bootstrap.bundle.min.js"></script>
+		
 	<!--<script>
 		$(document).ready(function(){
 			$(".nav-icon").click(function(){
@@ -353,13 +329,5 @@
 			document.getElementById("mySidenav").style.width = "0";
 			document.getElementById("main").style.marginRight = "0";
 		}
-
-
-		
-
-
-
 	</script>
 
-</body>
-</html>

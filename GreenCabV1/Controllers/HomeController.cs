@@ -5,14 +5,24 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using GreenCabV1.Models;
-
+using System.Configuration;
+using GreenCabV1.Repository;
 namespace GreenCabV1.Controllers
 {
     public class HomeController : Controller
     {
+
+
+
+        IComman _Common;
+
+        public HomeController(IComman _ic)
+        {
+            _Common = _ic;
+        }
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("carpool", "Home");
         }
 
 
@@ -38,9 +48,12 @@ namespace GreenCabV1.Controllers
         }
 
 
-        [ActionName("daily-carpool")]
+        [ActionName("carpool")]
         public IActionResult dailycarpool()
         {
+            
+
+
             return View();
         }
 
@@ -70,12 +83,23 @@ namespace GreenCabV1.Controllers
 
 
         [HttpPost]
-        [ActionName("daily-carpool")]
-        public  IActionResult dailycarpool(DailyCabModels models)
+        [ActionName("carpool")]
+        public IActionResult dailycarpool(DailyCabModels models)
         {
+
+            int a = 1;///_Common.SaveDailyCarPool(models);
+
+            if (a > 0)
+                return RedirectToAction("thank-you", "Home");
 
             return View();
 
+        }
+
+        [ActionName("thank-you")]
+        public IActionResult thankyou()
+        {
+            return View();
         }
 
 
@@ -83,6 +107,12 @@ namespace GreenCabV1.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+
+        public IActionResult terms()
+        {
+            return View();
         }
     }
 }

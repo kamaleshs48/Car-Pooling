@@ -3,10 +3,90 @@
 	ViewData["Title"] = "csr";
 	Layout = "~/Views/Shared/_LayoutMainV1.cshtml";
 }
+<style>
+	.top-header {
+		display: none;
+	}
 
+	.csr-services {
+		border-bottom: 1px solid #45c96a;
+		padding-bottom: 30px;
+	}
+
+		.csr-services h2 {
+			text-transform: capitalize !important;
+			font-size: 25px !important;
+		}
+
+	.globe-icon {
+		position: relative;
+	}
+
+		.globe-icon img {
+			margin: 0 auto;
+			position: absolute;
+			top: -45px;
+		}
+
+	.globe-line hr {
+		margin-top: 20px;
+		margin-bottom: 20px;
+		border: 0;
+		border-top: 2px solid #45c96a;
+	}
+
+	.globe-section {
+		padding: 20px 0;
+		margin-top: 0;
+	}
+
+	.get-intouch h2 {
+		text-transform: uppercase;
+		font-size: 36px !important;
+		font-weight: 500;
+		color: #000;
+		padding-bottom: 10px;
+	}
+
+	.get-intouch p {
+		padding-bottom: 25px;
+		font-weight: 500;
+	}
+
+	.services-parag {
+		font-weight: 500;
+		font-size: 30px;
+		margin-top: 9px;
+		padding-bottom: 0;
+	}
+
+	.footer {
+		padding-left: 20px !important;
+	}
+
+	h2 {
+		text-transform: capitalize !important;
+		font-size: 25px !important;
+		color: #45c96a !important;
+	}
+
+	.newsletter a {
+		font-size: 18px !important;
+		width: 25%;
+		border: 1px solid #45c96a !important;
+	}
+
+	p {
+		font-size: 18px;
+		line-height: 26px;
+	}
+</style>
 <div class="banner-section">
 	<img src="assets/images/banner-csr.jpg" alt="images">
 </div>
+
+
+
 <div class="aboutus">
 	<div class="container services">
 		<div class="row">
@@ -35,7 +115,7 @@
 		<div class="row">
 			<div class="col-md-6 icons">
 				<div class="services-name">
-					<h2>You support us; we take it to the public</h2>
+					<h2>We brag about your support</h2>
 					<p>We show off your brand through on-ground activities, Event and Promotions.</p>
 				</div>
 			</div>
@@ -69,7 +149,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="heading-hr-line">
-					<span><img src="assets/images/globe-icon.png" alt="Icon"></span>
+					<span><img src="~/assets/images/globe-icon.png" alt="Icon"></span>
 				</div>
 			</div>
 		</div>

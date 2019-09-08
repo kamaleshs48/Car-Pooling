@@ -1,0 +1,380 @@
+﻿
+@{
+	ViewData["Title"] = "dailycarpool";
+	Layout = "~/Views/Shared/_LayoutMainV1.cshtml";
+}
+<script src='https://maps.googleapis.com/maps/api/js?v=3&amp;libraries=places&key=AIzaSyDD7puqlz8_uRxO2cL_EyXi7xWE3Vkm-m8'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="assets/css/full-slider.css">
+<link rel="stylesheet" type="text/css" href="~/assets/css/index.css">
+
+<style>
+	.input-validation-error
+	{
+		border-color:red!important;
+	}
+	.slider-frm {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: #6e727d !important;
+}
+</style>
+
+@model DailyCabModels
+<div class="row">
+	<div class="col-md-7">
+		<div class="slider-section">
+
+			<div class="slider">
+				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+					<ol class="carousel-indicators">
+						<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+					</ol>
+					<div class="carousel-inner" role="listbox">
+						<!-- Slide One - Set the background image for this slide in the line below -->
+						<div class="carousel-item active" style="background-image: url('./assets//images/home-banner-1.jpg');">
+						</div>
+						<!-- Slide Two - Set the background image for this slide in the line below -->
+						<div class="carousel-item" style="background-image: url('./assets//images/home-banner-2.jpg');">
+							<!--<div class="carousel-caption d-none d-md-block">
+							  <h3>Second Slide</h3>
+							  <p>This is a description for the second slide.</p>
+							</div>-->
+						</div>
+						<!-- Slide Three - Set the background image for this slide in the line below -->
+						<div class="carousel-item" style="background-image: url('./assets/images/home-banner-3.jpg');">
+						</div>
+					</div>
+					<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-5">
+		<div class="slider-frm" style="width:95%!important;top:0px!important">
+			
+			<form action="/carpool" method="post">
+						<div class="form-group radio-btn">
+							<span>I am a </span>
+							<input type="radio" asp-for="Sex" value="Male" checked>&nbsp; Male &nbsp;
+							<input type="radio" asp-for="Sex" value="Female">&nbsp; Female
+						</div>
+
+						<div class="form-group form-group1">
+
+							<input asp-for="Name" class="form-control" placeholder="Name" />
+
+						</div>
+
+						<div class="form-group form-group1">
+
+							<input asp-for="Email" class="form-control" placeholder="Email" />
+
+						</div>
+						<div class="form-group form-group1">
+
+							<input asp-for="Official" class="form-control" placeholder="Official Email" />
+
+						</div>
+						<div class="form-group form-group1">
+
+							<input asp-for="MobileNo" class="form-control" placeholder="Mobile No" />
+
+						</div>
+
+
+						<div class="form-group form-group1">
+							<div class="frm-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+							<input asp-for="Source" class="form-control" placeholder="Leaving" />
+
+						</div>
+						<div class="form-group">
+							<div class="frm-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+
+							<input asp-for="Destination" class="form-control" placeholder="Going to" />
+						</div>
+						<div class="form-group form-group1">
+							<input type="text" name="reaching" class="contact-frm" id="usr" placeholder="Reaching time" disabled>
+							<select class="contact-frm" asp-for="ReachingHour">
+								<option value="">Hour</option>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+								<option>6</option>
+								<option>7</option>
+								<option>8</option>
+								<option>9</option>
+								<option>10</option>
+								<option>11</option>
+								<option>12</option>
+								<option>13</option>
+								<option>14</option>
+								<option>15</option>
+								<option>16</option>
+								<option>17</option>
+								<option>18</option>
+								<option>19</option>
+								<option>20</option>
+								<option>21</option>
+								<option>22</option>
+								<option>23</option>
+							</select>
+							<select class="contact-frm" asp-for="ReachingMinute">
+								<option value="">Minute</option>
+								<option>5</option>
+								<option>10</option>
+								<option>15</option>
+								<option>20</option>
+								<option>25</option>
+								<option>30</option>
+								<option>35</option>
+								<option>40</option>
+								<option>45</option>
+								<option>50</option>
+								<option>55</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<input type="text" name="reaching" class="contact-frm" id="usr" placeholder="Departure time" disabled>
+							<select class="contact-frm" asp-for="DepartureHour">
+								<option value="">Hour</option>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+								<option>6</option>
+								<option>7</option>
+								<option>8</option>
+								<option>9</option>
+								<option>10</option>
+								<option>11</option>
+								<option>12</option>
+								<option>13</option>
+								<option>14</option>
+								<option>15</option>
+								<option>16</option>
+								<option>17</option>
+								<option>18</option>
+								<option>19</option>
+								<option>20</option>
+								<option>21</option>
+								<option>22</option>
+								<option>23</option>
+							</select>
+
+
+
+
+							<select class="contact-frm" asp-for="DepartureMinute">
+								<option value="">Minute</option>
+								<option>5</option>
+								<option>10</option>
+								<option>15</option>
+								<option>20</option>
+								<option>25</option>
+								<option>30</option>
+								<option>35</option>
+								<option>40</option>
+								<option>45</option>
+								<option>50</option>
+								<option>55</option>
+							</select>
+						</div>
+						<span class="frm-text">Greencar is corrently only available for 5 days for a week (Monday to Friday)</span>
+						<div class="form-group form-group1">
+							<div class="frm-icon"><i class="fa fa-wheelchair" aria-hidden="true"></i></div>
+							<input type="number" asp-for="NoOfSeat" class="form-control" placeholder="Number of seats">
+						</div>
+						<div class="form-group">
+							<div class="frm-icon"><i class="fa fa-inr" aria-hidden="true"></i></div>
+							<input type="number" class="form-control" asp-for="EstimatedCast" placeholder="Estimated cost / month* ">
+						</div>
+						<button type="submit" name="submit" class="form-control btn">Submit Enquiry</button>
+						<span class="term-condition">Or <a href="#">sign up</a> with your rider account.<br><span class="proceeding">By proceeding, I agree to the <a href="#">term and condition</a></span></span>
+					</form>
+				
+
+		
+	</div>
+
+</div>
+
+    </div>
+
+<div class="services-section">
+	<div class="container services">
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6">
+				<h1>Benifits of greenCar</h1>
+				<p class="services-parag">
+					GreenCar is world’s largest not for profit car sharing company, now
+					introducing monthly fixed Cab pool service from your home to workplace
+				</p>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-3 icons">
+				<img src="assets/images/icon-varified.jpg" alt="Varified Icon">
+				<div class="services-name">
+					<h2>verified members</h2>
+					<p>verified profile and email<br>means additional security</p>
+				</div>
+			</div>
+			<div class="col-md-3 icons">
+				<img src="assets/images/icon-easy.jpg" alt="Easy Icon">
+				<div class="services-name">
+					<h2>Easy</h2>
+					<p>Mobile app is available on your fingure tips</p>
+				</div>
+			</div>
+			<div class="col-md-3 icons">
+				<img src="assets/images/icon-economic.jpg" alt="Economic Icon">
+				<div class="services-name">
+					<h2>Economic</h2>
+					<p>Cost effective as you are sharing it with copassengers</p>
+				</div>
+			</div>
+			<div class="col-md-3 icons">
+				<img src="assets/images/icon-peace-of-mind.jpg" alt="Peace-of-mind Icon">
+				<div class="services-name">
+					<h2>Peace of mind</h2>
+					<p>Go anywhere, no hassel of parking or driving stress</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="newsletter-section">
+	<div class="container">
+		<div class="text1">
+			<h1>Search in Carpool</h1>
+			<a href="#">Proceed</a>
+		</div>
+	</div>
+</div>
+<div class="owner-section">
+	<div class="owner-img">
+		<div class="text">
+			<h1>Are you a car owner?</h1>
+			<p>Join the GreenCar<br>fleet and earn</p>
+			<a href="#">get started</a>
+		</div>
+	</div>
+</div>
+<div class="greencar-app-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-7 col-sm-12 get-greencar-app">
+				<div class="get-app">
+					<h2>Get GreenCar app</h2>
+					<p>A new and awesome GreenCar mobile app is coming soon.</p>
+					<ul class="app-icon clearfix">
+						<li><img src="assets/images/googleAppStore.png" alt="googleAppStore"></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-5 col-sm-12">
+				<div class="convence-img">
+					<img src="assets/images/mobile.jpg" alt="images">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="newsletter-section">
+	<div class="container">
+		<div class="newsletter">
+			<span>Sign up for newsletter</span>
+			<span><input type="text" name="email" placeholder="Enter your email"></span>
+			<a href="#">Submit</a>
+		</div>
+	</div>
+</div>
+
+<script>
+	$(document).ready(function () {
+		google.maps.event.addDomListener(window, 'load', initialize);
+	});
+
+
+
+	function CalculateDistance() {
+		var service = new google.maps.DistanceMatrixService();
+		service.getDistanceMatrix({
+			origins: [$("#Source").val()],
+			destinations: [$("#Destination").val()],
+			travelMode: google.maps.TravelMode.DRIVING,
+			unitSystem: google.maps.UnitSystem.METRIC,
+			avoidHighways: false,
+			avoidTolls: false
+		}, function (response, status) {
+			if (status == google.maps.DistanceMatrixStatus.OK && response.rows[0].elements[0].status != "ZERO_RESULTS") {
+				var distance = response.rows[0].elements[0].distance.value;
+				var duration = response.rows[0].elements[0].duration.text;
+				// $("#txtCast").val(parseInt(distance / 1000))
+
+
+				var _Distance = parseInt(distance / 1000);
+				var _BaseFare = 40; var _Days = 22;
+				var _PriceKM = 3.5;
+				var _TatalPrice = _Distance * 3.5 * 22 * 2 + (_BaseFare * 2 * 22);
+				$("#EstimatedCast").val(_TatalPrice)
+
+				//  console.log(JSON.stringify(response))
+				// var dvDistance = document.getElementById("dvDistance");
+				//dvDistance.innerHTML = "";
+				//dvDistance.innerHTML += "Distance: " + distance + "&nbsp;/&nbsp;";
+				//dvDistance.innerHTML += "Duration:" + duration;
+
+			} else {
+				//alert("Unable to find the distance via road.");
+			}
+		});
+	}
+
+
+
+	function initialize() {
+		//________________
+
+
+		var options = {
+
+			componentRestrictions: { country: "in" }
+		};
+
+		var input = document.getElementById('Source');
+		var autocomplete = new google.maps.places.Autocomplete(input, options);
+		google.maps.event.addListener(autocomplete, 'place_changed', function () {
+			CalculateDistance();
+		});
+		//**************************
+		var input1 = document.getElementById('Destination');
+		var autocomplete1 = new google.maps.places.Autocomplete(input1, options);
+		google.maps.event.addListener(autocomplete1, 'place_changed', function () {
+			CalculateDistance();
+		});
+		//**************************
+
+		//**************************
+
+
+		//**************************
+	}
+</script>
+<partial name="_ValidationScriptsPartial" />
