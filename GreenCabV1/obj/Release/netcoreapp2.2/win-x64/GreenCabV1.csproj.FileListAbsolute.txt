@@ -46,3 +46,5 @@ E:\Online Project\GreenCabV1\GreenCabV1\obj\Release\netcoreapp2.2\win-x64\GreenC
 E:\Online Project\GreenCabV1\GreenCabV1\obj\Release\netcoreapp2.2\win-x64\Razor\Views\Home\terms.g.cshtml.cs
 E:\Online Project\GreenCabV1\GreenCabV1\obj\Release\netcoreapp2.2\win-x64\Razor\Views\Home\carpool.g.cshtml.cs
 E:\Online Project\GreenCabV1\GreenCabV1\obj\Release\netcoreapp2.2\win-x64\Razor\Views\Home\carpool - Copy.g.cshtml.cs
+E:\Online Project\GreenCabV1\GreenCabV1\obj\Release\netcoreapp2.2\win-x64\Razor\Views\Home\Thanks.g.cshtml.cs
+E:\Online Project\GreenCabV1\GreenCabV1\obj\Release\netcoreapp2.2\win-x64\Razor\Views\Shared\_newsletter.g.cshtml.cs

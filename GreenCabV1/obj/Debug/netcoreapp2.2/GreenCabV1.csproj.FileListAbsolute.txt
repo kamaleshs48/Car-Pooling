@@ -43,3 +43,5 @@ E:\Online Project\GreenCabV1\GreenCabV1\obj\Debug\netcoreapp2.2\GreenCabV1.pdb
 E:\Online Project\GreenCabV1\GreenCabV1\obj\Debug\netcoreapp2.2\GreenCabV1.csproj.CopyComplete
 E:\Online Project\GreenCabV1\GreenCabV1\obj\Debug\netcoreapp2.2\Razor\Views\Home\carpool.g.cshtml.cs
 E:\Online Project\GreenCabV1\GreenCabV1\obj\Debug\netcoreapp2.2\Razor\Views\Home\carpool - Copy.g.cshtml.cs
+E:\Online Project\GreenCabV1\GreenCabV1\obj\Debug\netcoreapp2.2\Razor\Views\Home\Thanks.g.cshtml.cs
+E:\Online Project\GreenCabV1\GreenCabV1\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_newsletter.g.cshtml.cs

@@ -8,5 +8,7 @@ namespace GreenCabV1.Repository
     public interface IComman
     {
         int SaveDailyCarPool(DailyCabModels models);
+        int SaveCorporateCarpool(CorporateCarpoolModels models);
+
     }
 }

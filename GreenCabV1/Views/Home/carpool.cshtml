@@ -3,9 +3,27 @@
     ViewData["Title"] = "GreenCar Carpool | Cab-pool";
     Layout = "~/Views/Shared/_LayoutMainV1.cshtml";
 }
-<script src='https://maps.googleapis.com/maps/api/js?v=3&amp;libraries=places&key=AIzaSyDD7puqlz8_uRxO2cL_EyXi7xWE3Vkm-m8'></script>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="GreenCar Carpool NGO connects car owners and co-travellers to share a ride. Lets fight against Intolerable Air Pollution and reduce traffic congestion." />
+<meta name="keywords" content="carshare, greencar, rideshare, carpool, carpooling, liftshare, delhi carpool, Gurgaon carpool, Noida carpool, Gurgaon to delhi carpool" />
+
+
+
+<script src='https://maps.googleapis.com/maps/api/js?v=3&sensor=false&amp;libraries=places&key=AIzaSyDD7puqlz8_uRxO2cL_EyXi7xWE3Vkm-m8'></script>
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-6681014100738930",
+        enable_page_level_ads: true
+    });
+</script>
 
 
 <style>
@@ -36,9 +54,9 @@
                 <!-- Slide Two - Set the background image for this slide in the line below -->
                 <div class="carousel-item" style="background-image: url('assets/images/home-banner-2.jpg');">
                     <!--<div class="carousel-caption d-none d-md-block">
-                  <h3>Second Slide</h3>
-                  <p>This is a description for the second slide.</p>
-                </div>-->
+                      <h3>Second Slide</h3>
+                      <p>This is a description for the second slide.</p>
+                    </div>-->
                 </div>
                 <!-- Slide Three - Set the background image for this slide in the line below -->
                 <div class="carousel-item" style="background-image: url('assets/images/home-banner-3.jpg');">
@@ -54,7 +72,7 @@
             </a>
         </div>
 
-     
+
 
     </div>
     <div class="form-section">
@@ -109,8 +127,8 @@
                     </div>
 
 
-                    
-                    
+
+
                     <div class="col-xs-12 col-sm-12">
                         <div class="form-group clearfix">
                             <input type="number" class="form-control" asp-for="EstimatedCast" placeholder="cost/month* ">
@@ -132,7 +150,7 @@
 <div class="newsletter-section">
     <div class="container">
         <div class="text1" style="height:100px">
-           
+
         </div>
     </div>
 </div>
@@ -166,20 +184,14 @@
     </div>
 </div>
 <div class="newsletter-section">
-    <div class="container">
-        <div class="newsletter">
-            <span>Sign up for newsletter</span>
-            <span><input type="text" name="email" placeholder="Enter your email"></span>
-            <a href="#">Submit</a>
-        </div>
-    </div>
+   <partial name="_newsletter" />
 </div>
 
 <script>
     $(document).ready(function () {
-      
-       // google.maps.event.addDomListener(window, 'load', initialize());
-        setTimeout(function () {initialize() },200)
+
+        // google.maps.event.addDomListener(window, 'load', initialize());
+        setTimeout(function () { initialize() }, 200)
     });
 
 
@@ -230,7 +242,7 @@
         };
 
         var input = document.getElementById('Source');
-      
+
         var autocomplete = new google.maps.places.Autocomplete(input, options);
         google.maps.event.addListener(autocomplete, 'place_changed', function () {
             CalculateDistance();

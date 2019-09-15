@@ -81,16 +81,34 @@ namespace GreenCabV1.Controllers
             return View();
         }
 
+        public IActionResult Thanks()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult GetInTouch(CorporateCarpoolModels models)
+        {
+            int a = _Common.SaveCorporateCarpool(models);
+
+            if (a > 0)
+                return RedirectToAction("thanks", "Home");
+            return View("corporate-carpool");
+
+        }
+
+
 
         [HttpPost]
         [ActionName("carpool")]
         public IActionResult dailycarpool(DailyCabModels models)
         {
 
-            int a = 1;///_Common.SaveDailyCarPool(models);
+            int a = _Common.SaveDailyCarPool(models);
 
             if (a > 0)
                 return RedirectToAction("thank-you", "Home");
+
 
             return View();
 

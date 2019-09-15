@@ -39,7 +39,7 @@ namespace GreenCabV1.Models
     }
 
 
-    public class CarporateCarpoolModels
+    public class CorporateCarpoolModels
     {
         [Required]
         public string Name { get; set; }
@@ -49,12 +49,12 @@ namespace GreenCabV1.Models
         [Required]
         [EmailAddress]
         public string Email { get; set; }
-        [Required]
-        public string Organization { get; set; }
-        [Required]
-        public string NoOfEmployee { get; set; }
-        [Required]
-        public string City { get; set; }
+        //[Required]
+        //public string Organization { get; set; }
+        //[Required]
+        //public string NoOfEmployee { get; set; }
+        //[Required]
+        //public string City { get; set; }
         [Required]
         public string Comments { get; set; }
     }
