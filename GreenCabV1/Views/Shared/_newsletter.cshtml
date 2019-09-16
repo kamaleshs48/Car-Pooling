@@ -1,8 +1,38 @@
 ﻿<div class="container">
     <div class="newsletter">
         <span>Sign up for newsletter</span>
-        <span><input type="text" name="email" placeholder="Enter your email"></span>
+        <span><input type="text" name="email" id="txtNEmail" placeholder="Enter your email" maxlength="50" ></span>
         <a href="#" onclick="SubmitNews()">Submit</a>
        
     </div>
 </div>
+<script>
+    function SubmitNews() {
+        if ($("#txtNEmail").val() == '') {
+            alert('Please enter Email');
+            $("#txtNEmail").focus();
+            return;
+
+        }
+
+         $.ajax({
+            url: '@Url.Action("SaveNewsLetter","Home")',
+            data: {
+                'Email': $("#txtNEmail").val()
+            },
+            beforeSend: function () {
+                $("#cover").show();
+            },
+            complete: function () {
+                $("#cover").hide();
+            },
+             success: function (data) {
+                 $("#txtNEmail").val('');
+                 $("#txtNEmail").focus();
+                alert(data);
+             
+            }
+        });
+
+    }
+</script>

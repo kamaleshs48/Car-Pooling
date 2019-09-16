@@ -58,5 +58,16 @@ namespace GreenCabV1.Models
         [Required]
         public string Comments { get; set; }
     }
-
+    public class ContactUsModels
+    {
+        [Required]
+        public string FirstName { get; set; }
+        [Required]
+        public string LastName { get; set; }
+        [Required]
+        public string MobileNo { get; set; }
+        [Required]
+        [EmailAddress]
+        public string EmailID { get; set; }
+    }
 }

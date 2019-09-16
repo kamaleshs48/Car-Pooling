@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 using GreenCabV1.Models;
 namespace GreenCabV1.Repository
 {
-    public class Common:IComman
+    public class Common : IComman
     {
         public int SaveDailyCarPool(DailyCabModels models)
         {
 
-          
-                SqlParameter[] pr = new SqlParameter[]
-                {
+
+            SqlParameter[] pr = new SqlParameter[]
+            {
 
                 new SqlParameter("@Gender",models.Sex),
                 new SqlParameter("@Name",models.Name),
@@ -32,17 +32,17 @@ namespace GreenCabV1.Repository
                 new SqlParameter("@Cast",models.EstimatedCast),
 
 
-                };
+            };
 
 
-                return SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionStr(), CommandType.StoredProcedure, "sp_SaveEnquiry", pr);
-           
+            return SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionStr(), CommandType.StoredProcedure, "sp_SaveEnquiry", pr);
 
 
 
-            
+
+
         }
-       public int SaveCorporateCarpool(CorporateCarpoolModels models)
+        public int SaveCorporateCarpool(CorporateCarpoolModels models)
         {
             SqlParameter[] pr = new SqlParameter[]
                {
@@ -51,7 +51,7 @@ namespace GreenCabV1.Repository
                 new SqlParameter("@Phone",models.Phone),
                 new SqlParameter("@Email",models.Email),
                 new SqlParameter("@Comments",models.Comments),
-        
+
                 new SqlParameter("@Mode","Save"),
 
 
@@ -62,5 +62,32 @@ namespace GreenCabV1.Repository
 
 
         }
+
+
+        public int SaveContactUsData(ContactUsModels models)
+        {
+            SqlParameter[] pr = new SqlParameter[]
+                {
+
+                new SqlParameter("@FirstName",models.FirstName),
+                new SqlParameter("@LastName",models.LastName),
+                new SqlParameter("@MobileNo",models.MobileNo),
+                new SqlParameter("@EmailID",models.EmailID),
+                new SqlParameter("@Mode","Save"),
+                };
+             SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionStr(), CommandType.StoredProcedure, "sp_Save_ContactUsData", pr);
+            return 1;
+        }
+
+        public int SaveNewLetterData(string Email)
+        {
+
+            string Qry = "Insert Into tbl_Newsletter (Email) values ('" + Email +"')";
+
+          
+            return SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionStr(), CommandType.Text, Qry);
+        }
+
+
     }
 }

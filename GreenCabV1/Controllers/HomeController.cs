@@ -97,6 +97,25 @@ namespace GreenCabV1.Controllers
 
         }
 
+        public JsonResult SaveNewsLetter(string Email)
+        {
+            _Common.SaveNewLetterData(Email);
+            return Json(" Thanks.. for showing intrerest in Green Car. We will get back to you");
+        }
+
+
+        [HttpPost]
+        public IActionResult SaveContactUs(ContactUsModels models)
+        {
+            int a = _Common.SaveContactUsData(models);
+
+            if (a > 0)
+                return RedirectToAction("thanks", "Home");
+            return View("corporate-carpool");
+
+        }
+
+
 
 
         [HttpPost]
