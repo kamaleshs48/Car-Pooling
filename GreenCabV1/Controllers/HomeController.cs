@@ -51,7 +51,7 @@ namespace GreenCabV1.Controllers
         [ActionName("carpool")]
         public IActionResult dailycarpool()
         {
-            
+
 
 
             return View();
@@ -96,6 +96,15 @@ namespace GreenCabV1.Controllers
             return View("corporate-carpool");
 
         }
+
+
+        [HttpPost]
+        public JsonResult SaveCarOwnerDetails(string Name, string MobileNo, string City)
+        {
+            _Common.SaveCarOwnerDetails(Name, MobileNo, City);
+            return Json(" Thanks.. for showing intrerest in Green Car. We will get back to you");
+        }
+
 
         public JsonResult SaveNewsLetter(string Email)
         {

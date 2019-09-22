@@ -42,6 +42,27 @@ namespace GreenCabV1.Repository
 
 
         }
+
+        public int SaveCarOwnerDetails(string name, string mobileNo, string city)
+        {
+            SqlParameter[] pr = new SqlParameter[]
+           {
+
+                new SqlParameter("@name",name),
+                new SqlParameter("@Phone",mobileNo),
+                new SqlParameter("@city",city),
+                new SqlParameter("@Mode","SaveCarOwnerDetails")
+
+           };
+
+
+            return SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionStr(), CommandType.StoredProcedure, "sp_Save_Corporate_Enquiry", pr);
+
+
+
+        }
+
+
         public int SaveCorporateCarpool(CorporateCarpoolModels models)
         {
             SqlParameter[] pr = new SqlParameter[]
@@ -75,16 +96,16 @@ namespace GreenCabV1.Repository
                 new SqlParameter("@EmailID",models.EmailID),
                 new SqlParameter("@Mode","Save"),
                 };
-             SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionStr(), CommandType.StoredProcedure, "sp_Save_ContactUsData", pr);
+            SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionStr(), CommandType.StoredProcedure, "sp_Save_ContactUsData", pr);
             return 1;
         }
 
         public int SaveNewLetterData(string Email)
         {
 
-            string Qry = "Insert Into tbl_Newsletter (Email) values ('" + Email +"')";
+            string Qry = "Insert Into tbl_Newsletter (Email) values ('" + Email + "')";
 
-          
+
             return SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionStr(), CommandType.Text, Qry);
         }
 

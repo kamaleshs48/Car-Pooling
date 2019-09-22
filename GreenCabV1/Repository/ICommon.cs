@@ -11,5 +11,6 @@ namespace GreenCabV1.Repository
         int SaveCorporateCarpool(CorporateCarpoolModels models);
         int SaveContactUsData(ContactUsModels models);
         int SaveNewLetterData(string Email);
+        int SaveCarOwnerDetails(string name, string mobileNo, string city);
     }
 }

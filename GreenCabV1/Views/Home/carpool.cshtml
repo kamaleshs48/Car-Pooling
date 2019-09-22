@@ -11,8 +11,9 @@
 
 
 
-<script src='https://maps.googleapis.com/maps/api/js?v=3&sensor=false&amp;libraries=places&key=AIzaSyDD7puqlz8_uRxO2cL_EyXi7xWE3Vkm-m8'></script>
+@*<script src='https://maps.googleapis.com/maps/api/js?v=3&sensor=false&amp;libraries=places&key=AIzaSyDD7puqlz8_uRxO2cL_EyXi7xWE3Vkm-m8'></script>*@
 
+<script src='https://maps.googleapis.com/maps/api/js?v=3&sensor=false&amp;libraries=places&key=AIzaSyCTZZzl76E1r0NR8ARbup8hCiF6-QXMwKI'></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -108,7 +109,7 @@
                     </div>
                     <div class="col-xs-12 col-sm-12">
                         <div class="form-group">
-                            <input asp-for="MobileNo" class="form-control" placeholder="Mobile No" />
+                            <input asp-for="MobileNo" class="form-control" placeholder="Mobile No" maxlength="10" />
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12">
@@ -159,7 +160,7 @@
         <div class="text">
             <h1>Are you a car owner?</h1>
             <p>Join the GreenCar<br>fleet and earn</p>
-            <a href="#">get started</a>
+            <a href="#" onclick="OpenModel()">get started</a>
         </div>
     </div>
 </div>
@@ -184,7 +185,7 @@
     </div>
 </div>
 <div class="newsletter-section">
-   <partial name="_newsletter" />
+    <partial name="_newsletter" />
 </div>
 
 <script>
@@ -237,7 +238,6 @@
 
 
         var options = {
-
             componentRestrictions: { country: "in" }
         };
 
@@ -262,3 +262,117 @@
     }
 </script>
 <partial name="_ValidationScriptsPartial" />
+
+
+
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Please Fill Details</h4>
+                <button type="button" class="close" data-dismiss="modal" id="btnClose">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="mName" placeholder=" Name">
+                    </div>
+                </div>
+
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input type="tel" maxlength="10" class="form-control" id="mMobileNo" placeholder="Mobile Number">
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="mCity" placeholder="City">
+                    </div>
+                </div>
+                <div class="col-md-4 col-md-offset-4">
+                    <button type="button" class="btn btn-danger" onclick="SaveCarDetails()">Submit</button>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function OpenModel() {
+        $("#myModal").modal(
+
+            { backdrop: 'static' }
+
+
+        )
+    }
+
+    function SaveCarDetails() {
+
+        $("#mName").removeClass('input-validation-error');
+        $("#mMobileNo").removeClass('input-validation-error');
+        $("#mCity").removeClass('input-validation-error');
+
+        var flag = false;
+        if ($("#mName").val().trim() == '') {
+            $("#mName").addClass('input-validation-error');
+            flag = true;
+        }
+        if ($("#mMobileNo").val().trim() == '') {
+            $("#mMobileNo").addClass('input-validation-error');
+           flag = true;
+        }
+        if ($("#mCity").val().trim() == '') {
+            $("#mCity").addClass('input-validation-error');
+            flag = true;
+        }
+        if (flag)
+            return;
+
+        // Save In DB
+
+
+             $.ajax({
+                 url: '@Url.Action("SaveCarOwnerDetails","Home")',
+                 method:'POST',
+                data: {
+                    'Name': $("#mName").val(),
+                    'MobileNo': $("#mMobileNo").val(),
+                    'City': $("#mCity").val(),
+
+               },
+            beforeSend: function () {
+               
+            },
+            complete: function () {
+                
+            },
+             success: function (data) {
+
+                 $("#btnClose").click();
+
+                 $("#mName").val('');
+                 $("#mMobileNo").val('');
+                 $("#mCity").val('');
+
+                
+                alert(data);
+
+            }
+        });
+
+
+    }
+
+</script>
