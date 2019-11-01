@@ -81,12 +81,12 @@ namespace GreenCabV1
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=carpool}/{id?}");
+                    template: "{controller=Home}/{action=corporate-carpool}/{id?}");
 
                 routes.MapRoute(
                      name: "home",
                      template: "/{action}/{id?}",
-                     defaults: new { controller = "Home", action = "carpool" });
+                     defaults: new { controller = "Home", action = "corporate-carpool" });
 
             });
 

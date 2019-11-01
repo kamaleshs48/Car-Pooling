@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrator\\source\\repos\\GreenCabV1\\GreenCabV1\\GreenCabV1.csproj": {}
+    "D:\\Project\\GIT HUB\\GreenCabV1\\GreenCabV1\\GreenCabV1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrator\\source\\repos\\GreenCabV1\\GreenCabV1\\GreenCabV1.csproj": {
+    "D:\\Project\\GIT HUB\\GreenCabV1\\GreenCabV1\\GreenCabV1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\source\\repos\\GreenCabV1\\GreenCabV1\\GreenCabV1.csproj",
+        "projectUniqueName": "D:\\Project\\GIT HUB\\GreenCabV1\\GreenCabV1\\GreenCabV1.csproj",
         "projectName": "GreenCabV1",
-        "projectPath": "C:\\Users\\Administrator\\source\\repos\\GreenCabV1\\GreenCabV1\\GreenCabV1.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\source\\repos\\GreenCabV1\\GreenCabV1\\obj\\publish\\win-x64\\",
+        "projectPath": "D:\\Project\\GIT HUB\\GreenCabV1\\GreenCabV1\\GreenCabV1.csproj",
+        "packagesPath": "C:\\Users\\KAMLESH\\.nuget\\packages\\",
+        "outputPath": "D:\\Project\\GIT HUB\\GreenCabV1\\GreenCabV1\\obj\\publish\\win-x64\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\KAMLESH\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

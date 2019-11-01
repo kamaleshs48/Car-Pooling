@@ -92,7 +92,25 @@ namespace GreenCabV1.Controllers
             int a = _Common.SaveCorporateCarpool(models);
 
             if (a > 0)
+            {
+                //Send Email
+
+                string Message = "";
+
+                Message += "Hi Team,<br/>" + " Green Car Query Submited details are below.<br/>";
+                Message += "<string>Name:-</strong>" + models.Name + "<br/>";
+                Message += "<string>EMail:-</strong>" + models.Email + "<br/>";
+
+                Message += "<string>Contact Number:-</strong>" + models.Phone + "<br/>";
+
+                Message += "<string>Message:-</strong>" + models.Comments + "";
+                CommonFunction.SendMail("GreenCar | Contact Us Details", Message, "rajivarora2014@gmail.com");
+                CommonFunction.SendMail("GreenCar | Contact Us Details", Message, "greencarcarpool@gmail.com");
+
+
                 return RedirectToAction("thanks", "Home");
+            }
+
             return View("corporate-carpool");
 
         }
