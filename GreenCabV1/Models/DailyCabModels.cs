@@ -14,7 +14,7 @@ namespace GreenCabV1.Models
         [Required]
         [EmailAddress]
         public string Email { get; set; }
-        
+
         [RegularExpression(@"\b[\w\.-]+@((?!gmail|googlemail|yahoo|hotmail).)[\w\.-]+\.\w{2,4}\b")]
         public string Official { get; set; }
         [Required]
@@ -36,7 +36,7 @@ namespace GreenCabV1.Models
         public string EstimatedCast { get; set; }
         [Required]
         public string Sex { get; set; }
-       
+
         [Required]
         public string NoOfSeat { get; set; }
     }
@@ -53,7 +53,9 @@ namespace GreenCabV1.Models
         [EmailAddress]
         public string Email { get; set; }
         //[Required]
-        //public string Organization { get; set; }
+        public string Organization { get; set; }
+        private string _Mode = "Save";
+        public string Mode { get { return _Mode; } set { _Mode = value; } }
         //[Required]
         //public string NoOfEmployee { get; set; }
         //[Required]

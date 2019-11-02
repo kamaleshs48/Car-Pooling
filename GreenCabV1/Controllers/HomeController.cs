@@ -124,6 +124,47 @@ namespace GreenCabV1.Controllers
         }
 
 
+        [HttpPost]
+        public JsonResult SaveOddEvenDetails(string Name, string MobileNo, string Email, string ORG, string Comments)
+        {
+
+
+            CorporateCarpoolModels models = new CorporateCarpoolModels();
+            models.Name = Name;
+            models.Phone = MobileNo;
+            models.Email = Email;
+            models.Organization = ORG;
+            models.Comments = Comments;
+            models.Mode = "SaveOddEvenDetails";
+
+            int a = _Common.SaveCorporateCarpool(models);
+
+
+            string Message = "";
+
+            Message += "Hi Team,<br/>" + "Odd Even  details are below.<br/>";
+            Message += "<string>Name:-</strong>" + models.Name + "<br/>";
+            Message += "<string>EMail:-</strong>" + models.Email + "<br/>";
+
+            Message += "<string>Contact Number:-</strong>" + models.Phone + "<br/>";
+            Message += "<string>Organization:-</strong>" + models.Organization + "<br/>";
+            Message += "<string>Comments:-</strong>" + models.Comments + "<br/>";
+
+            Message += "<string>Message:-</strong>" + models.Comments + "";
+            CommonFunction.SendMail("GreenCar | Odd Even Details", Message, "rajivarora2014@gmail.com");
+            CommonFunction.SendMail("GreenCar | Odd Even Details", Message, "greencarcarpool@gmail.com");
+
+
+
+
+
+            return Json(" Thanks.. for showing intrerest in Green Car. We will get back to you");
+        }
+
+
+
+
+
         public JsonResult SaveNewsLetter(string Email)
         {
             _Common.SaveNewLetterData(Email);

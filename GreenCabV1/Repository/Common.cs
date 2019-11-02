@@ -72,8 +72,9 @@ namespace GreenCabV1.Repository
                 new SqlParameter("@Phone",models.Phone),
                 new SqlParameter("@Email",models.Email),
                 new SqlParameter("@Comments",models.Comments),
+                  new SqlParameter("@Organization",models.Organization),
 
-                new SqlParameter("@Mode","Save"),
+                new SqlParameter("@Mode",models.Mode),
 
 
                };
@@ -109,6 +110,6 @@ namespace GreenCabV1.Repository
             return SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionStr(), CommandType.Text, Qry);
         }
 
-
+        
     }
 }
