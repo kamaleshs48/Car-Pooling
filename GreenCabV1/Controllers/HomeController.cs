@@ -52,9 +52,9 @@ namespace GreenCabV1.Controllers
         public IActionResult dailycarpool()
         {
 
+            return RedirectToAction("corporate-carpool");
 
-
-            return View();
+           // return View();
         }
 
 
