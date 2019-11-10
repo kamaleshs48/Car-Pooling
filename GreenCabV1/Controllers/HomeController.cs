@@ -22,7 +22,7 @@ namespace GreenCabV1.Controllers
         }
         public IActionResult Index()
         {
-            return RedirectToAction("carpool", "Home");
+            return RedirectToAction("csr", "Home");
         }
 
 

@@ -2,7 +2,7 @@
 @{
     ViewData["Title"] = "Buy Cabpool Software, Top CSR Rideshare Apps, Corporate Responsibility Program";
     Layout = "~/Views/Shared/_LayoutMainV1.cshtml";
-     ViewData["Description"]  = "Rideshare Software - Buy our rideshare software or use our services and avail benefits of corporate social program for your organization. If you will associate with us through cabpool then we will put your brand name to grab the eyeballs.";
+    ViewData["Description"] = "Rideshare Software - Buy our rideshare software or use our services and avail benefits of corporate social program for your organization. If you will associate with us through cabpool then we will put your brand name to grab the eyeballs.";
 }
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 @model CorporateCarpoolModels
@@ -168,6 +168,299 @@
         <div class="col-md-3 icons"></div>
     </div>
 </div>
+
+
+
+<div class="modal" id="myModal">
+    <div class="modal-dialog mod_width">
+        <div class="modal-content mod_width">
+
+            <!-- Modal Header -->
+            <div class="modal-header custom-header">
+
+                <h4 class="modal-title text-center">Carpool as CSR project</h4>
+                <button aria-hidden="true" class="close" data-dismiss="modal" type="button" id="btnClose">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+
+                <div class="content_dis">
+                    <p>WOW !-  Use CSR budget for Promoting your brand,  run B2B or B2C campaign - Enquire now</p>
+                  
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input class="form-control" placeholder="Name" type="text" required id="mName">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input class="form-control" placeholder="Phone" type="tel" required id="mMobileNo">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input class="form-control" placeholder="Email" type="text" required id="mEmail">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input class="form-control" placeholder="Organization Name" type="text" required id="mORG">
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <textarea class="form-control_textarea" placeholder="Comments" id="mComments"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group col-lg-offset-4">
+
+                        <button class="btn btn-primary" type="button" onclick="SaveODDEven()">Submit</button>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <hr />
+                <div class="">
+                    <div class="col-md-4">
+                        <h5>Contact Us</h5>
+
+                    </div>
+                    <div class="col-md-8">
+
+                        <p>Phone:-<a href="tel:011-3079-7309">011-3079-7309</a>,<br /> <a href="mailto:%20corporate@greencar.ngo">Email:-corporate@greencar.ngo</a></p>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        setTimeout(function () {
+
+            OpenModel();
+
+            // $("#myModal").modal();
+        }, 100);
+
+
+
+
+    });
+
+    function SaveODDEven() {
+
+
+        $("#mName").removeClass('input-validation-error');
+        $("#mMobileNo").removeClass('input-validation-error');
+        $("#mCity").removeClass('input-validation-error');
+
+        var flag = false;
+        if ($("#mName").val().trim() == '') {
+            $("#mName").addClass('input-validation-error');
+            flag = true;
+        }
+        if ($("#mMobileNo").val().trim() == '') {
+            $("#mMobileNo").addClass('input-validation-error');
+           flag = true;
+        }
+        if ($("#mEmail").val().trim() == '') {
+            $("#mEmail").addClass('input-validation-error');
+            flag = true;
+        }
+         if ($("#mORG").val().trim() == '') {
+            $("#mORG").addClass('input-validation-error');
+            flag = true;
+        }
+          if ($("#mComments").val().trim() == '') {
+            $("#mComments").addClass('input-validation-error');
+            flag = true;
+        }
+
+
+
+        if (flag)
+            return;
+
+        // Save In DB
+
+
+             $.ajax({
+                 url: '@Url.Action("SaveOddEvenDetails","Home")',
+                 method:'POST',
+                data: {
+                    'Name': $("#mName").val(),
+                    'MobileNo': $("#mMobileNo").val(),
+                    'Email': $("#mEmail").val(),
+                    'ORG': $("#mORG").val(),
+                    'Comments': $("#mComments").val(),
+
+
+
+               },
+            beforeSend: function () {
+
+            },
+            complete: function () {
+
+            },
+             success: function (data) {
+
+                 $("#btnClose").click();
+
+                 $("#mName").val('');
+                 $("#mMobileNo").val('');
+                 $("#mEmail").val('');
+                 $("#mORG").val('');
+                 $("#mComments").val('');
+
+
+                alert(data);
+
+            }
+        });
+
+
+    }
+
+
+
+    function OpenModel() {
+        $("#myModal").modal(
+
+            { backdrop: 'static' }
+
+
+        );
+
+    }
+
+</script>
+<style>
+    #myModal h4 {
+        font-size: 25px;
+        color: #fff;
+    }
+
+    button.btn.btn-primary.submit_btn {
+        background: #45c96a;
+        border-color: #45c96a;
+        padding: 8px 50px;
+        font-size: 16px;
+        /* width: 100%; */
+        border-radius: 0;
+        margin: 10px 0 5px;
+        border-radius: 2px;
+    }
+
+    .form-control_textarea {
+        display: block;
+        width: 100%;
+        height: 40px;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #555;
+        background-color: #fff;
+        background-image: none;
+        border-radius: 0px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+        box-shadow: none;
+        -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+        -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        border: none;
+        border-top: none;
+        border-bottom: 2px solid #45c96a;
+    }
+
+    .content_dis p {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .cus_footer h5 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .cus_footer p {
+        font-size: 16px;
+        text-align: center;
+        color: #000;
+    }
+
+        .cus_footer p a {
+            color: #000;
+        }
+
+
+    #myModal input {
+        display: block;
+        /*width: 100%;
+        height: 40px;*/
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #555;
+        background-color: #fff;
+        background-image: none;
+        border-radius: 0px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+        box-shadow: none;
+        -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+        -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        border: none;
+        border-top: none;
+        border-bottom: 2px solid #45c96a;
+    }
+
+    .custom-header {
+        background: #45c96a;
+        border-radius: 5px 5px 0 0;
+    }
+
+        .custom-header button.close {
+            color: #fff;
+            opacity: 1;
+        }
+
+    .modal-dialog.mod_width {
+        width: 100% !important;
+    }
+
+    .odd_even {
+        display: block;
+        /*width: 100%;
+        height: 40px;*/
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #555;
+        background-color: #fff;
+        background-image: none;
+        border-radius: 0px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+        box-shadow: none;
+        -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+        -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        border: none;
+        border-top: none;
+        border-bottom: 2px solid #45c96a;
+    }
+</style>
+
 
 
 <div class="newsletter-section">
