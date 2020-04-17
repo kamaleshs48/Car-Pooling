@@ -62,6 +62,11 @@ namespace GreenCabV1.Models
         //public string City { get; set; }
         [Required]
         public string Comments { get; set; }
+
+
+        [Required]
+        [StringLength(4)]
+        public string CaptchaCode { get; set; }
     }
     public class ContactUsModels
     {

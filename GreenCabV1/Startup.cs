@@ -30,22 +30,22 @@ namespace GreenCabV1
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
                 options.CheckConsentNeeded = context => true;
-              
+
                 options.MinimumSameSitePolicy = SameSiteMode.None;
-               
+
             });
             services.AddMvc().AddViewOptions(options =>
             {
-               
-                    options.HtmlHelperOptions.ClientValidationEnabled = true;
-
-               
-
-
+                options.HtmlHelperOptions.ClientValidationEnabled = true;
             });
-
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(20);
+                options.Cookie.HttpOnly = true;
+            });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddSingleton<IComman, Common>();
+            services.AddScoped<IAzureVideoStreamService, AzureVideoStreamService>();
             services.AddSingleton(typeof(IComman), typeof(Common));
 
             //services.AddLiveReload(config =>
@@ -67,16 +67,16 @@ namespace GreenCabV1
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-              app.UseHttpsRedirection();
+                app.UseHttpsRedirection();
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-          //  app.UseLiveReload();
+            //  app.UseLiveReload();
             app.UseDeveloperExceptionPage();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
+            app.UseSession();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
@@ -91,9 +91,9 @@ namespace GreenCabV1
             });
 
 
-           
 
-            
+
+
         }
     }
 }

@@ -154,3 +154,4 @@ D:\Project\GIT HUB\GreenCabV1\GreenCabV1\obj\Release\netcoreapp2.2\win-x64\Green
 D:\Project\GIT HUB\GreenCabV1\GreenCabV1\obj\Release\netcoreapp2.2\win-x64\GreenCabV1.RazorTargetAssemblyInfo.cs
 D:\Project\GIT HUB\GreenCabV1\GreenCabV1\obj\Release\netcoreapp2.2\win-x64\GreenCabV1.Views.pdb
 D:\Project\GIT HUB\GreenCabV1\GreenCabV1\obj\Release\netcoreapp2.2\win-x64\GreenCabV1.csproj.CopyComplete
+D:\Project\GIT HUB\GreenCabV1\GreenCabV1\obj\Release\netcoreapp2.2\win-x64\Razor\Views\Home\Test.cshtml.g.cs

@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 using GreenCabV1.Models;
 using System.Configuration;
 using GreenCabV1.Repository;
+using Microsoft.AspNetCore.Http;
+using System.IO;
+
 namespace GreenCabV1.Controllers
 {
     public class HomeController : Controller
@@ -54,7 +57,7 @@ namespace GreenCabV1.Controllers
 
             return RedirectToAction("corporate-carpool");
 
-           // return View();
+            // return View();
         }
 
 
@@ -89,6 +92,15 @@ namespace GreenCabV1.Controllers
         [HttpPost]
         public IActionResult GetInTouch(CorporateCarpoolModels models)
         {
+
+            if (!Captcha.ValidateCaptchaCode(models.CaptchaCode, HttpContext))
+            {
+                ModelState.AddModelError("CaptchaCode", "");
+                return View("corporate-carpool", models);
+
+            }
+
+
             int a = _Common.SaveCorporateCarpool(models);
 
             if (a > 0)
@@ -114,7 +126,25 @@ namespace GreenCabV1.Controllers
             return View("corporate-carpool");
 
         }
+        [Route("get-captcha-image")]
+        public IActionResult GetCaptchaImage()
+        {
+            try
 
+            {
+                int width = 100;
+                int height = 36;
+                var captchaCode = Captcha.GenerateCaptchaCode();
+                var result = Captcha.GenerateCaptchaImage(width, height, captchaCode);
+                HttpContext.Session.SetString("CaptchaCode", result.CaptchaCode);
+                Stream s = new MemoryStream(result.CaptchaByteData);
+                return new FileStreamResult(s, "image/png");
+            }
+            catch (Exception ex)
+            {
+                return Json(ex.Message);
+            }
+        }
 
         [HttpPost]
         public JsonResult SaveCarOwnerDetails(string Name, string MobileNo, string City)
@@ -216,6 +246,11 @@ namespace GreenCabV1.Controllers
 
 
         public IActionResult terms()
+        {
+            return View();
+        }
+
+        public IActionResult Test()
         {
             return View();
         }

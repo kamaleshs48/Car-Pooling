@@ -145,3 +145,4 @@ D:\Project\GIT HUB\GreenCabV1\GreenCabV1\obj\Debug\netcoreapp2.2\GreenCabV1.View
 D:\Project\GIT HUB\GreenCabV1\GreenCabV1\obj\Debug\netcoreapp2.2\GreenCabV1.dll
 D:\Project\GIT HUB\GreenCabV1\GreenCabV1\obj\Debug\netcoreapp2.2\GreenCabV1.pdb
 D:\Project\GIT HUB\GreenCabV1\GreenCabV1\obj\Debug\netcoreapp2.2\GreenCabV1.csproj.CopyComplete
+D:\Project\GIT HUB\GreenCabV1\GreenCabV1\obj\Debug\netcoreapp2.2\Razor\Views\Home\Test.cshtml.g.cs
