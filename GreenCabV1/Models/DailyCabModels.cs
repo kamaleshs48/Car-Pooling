@@ -68,6 +68,29 @@ namespace GreenCabV1.Models
         [StringLength(4)]
         public string CaptchaCode { get; set; }
     }
+
+
+
+    public class EliteContatusModels
+    {
+       
+        public string Name { get; set; }
+      
+        public string Phone { get; set; }
+       
+        public string Email { get; set; }
+        //[Required]
+        public string Organization { get; set; }
+        private string _Mode = "Save";
+        public string Mode { get { return _Mode; } set { _Mode = value; } }
+     
+        public string Comments { get; set; }
+
+
+     
+    }
+
+
     public class ContactUsModels
     {
         [Required]

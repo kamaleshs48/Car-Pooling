@@ -44,6 +44,19 @@ namespace GreenCabV1.Repository
             return await _client.GetStreamAsync(urlBlob);
         }
 
+        public async Task<Stream> GetVideoUrl(string Url)
+        {
+           
+            //FileStream fs = new FileStream(@"D:\Videos\\Test2.mp4", FileMode.Open);
+            //byte[] bdata = Encoding.Default.GetBytes("Hello File Handling!");
+            //fs.Write(bdata, 0, bdata.Length);
+            // fs.Close();
+            //  Console.WriteLine(data);
+            //  return fs;//_client.GetStreamAsync(data);
+
+            return await _client.GetStreamAsync(Url);
+        }
+
         ~AzureVideoStreamService()
         {
             if (_client != null)

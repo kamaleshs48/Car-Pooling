@@ -9,6 +9,7 @@ using System.Configuration;
 using GreenCabV1.Repository;
 using Microsoft.AspNetCore.Http;
 using System.IO;
+using Microsoft.AspNetCore.Cors;
 
 namespace GreenCabV1.Controllers
 {
@@ -254,5 +255,72 @@ namespace GreenCabV1.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        [EnableCors("AllowOrigin")]
+        public JsonResult AjaxMethod1(PersonModel person)
+        {
+            person.DateTime = DateTime.Now.ToString();
+            return Json(person);
+        }
+
+
+
+        [HttpPost]
+        [EnableCors("AllowOrigin")]
+        public JsonResult AjaxMethod([FromBody]EliteContatusModels models)
+        {
+            //person.DateTime = DateTime.Now.ToString();
+
+
+            try
+            {
+
+                int a = _Common.SaveCorporateCarpool(new CorporateCarpoolModels
+                {
+                    Name = models.Name,
+                    Organization = models.Organization,
+                    Mode = "Save",
+                    Email = models.Email,
+                    Comments = models.Comments,
+
+                }
+                    );
+
+                if (a > 0)
+                {
+                    //Send Email
+
+                    string Message = "";
+
+                    Message += "Hi Team,<br/>" + " Elitecorporatesolutions Query Submited details are below.<br/>";
+                    Message += "<string>Name:-</strong>" + models.Name + "<br/>";
+                    Message += "<string>EMail:-</strong>" + models.Email + "<br/>";
+
+                    Message += "<string>Contact Number:-</strong>" + models.Phone + "<br/>";
+                    Message += "<string>Subject :-</strong>" + models.Organization + "<br/>";
+
+                    Message += "<string>Message:-</strong>" + models.Comments + "";
+                    CommonFunction.SendMail("GreenCar | Contact Us Details", Message, "rajivarora2014@gmail.com");
+                    CommonFunction.SendMail("GreenCar | Contact Us Details", Message, "greencarcarpool@gmail.com");
+
+                    return Json(models);
+
+                    //  return RedirectToAction("thanks", "Home");
+                }
+            }
+            catch (Exception ex)
+            {
+                return Json("Error: " + ex.Message);
+            }
+            return Json("Error");
+
+
+
+
+
+        }
+
+
     }
 }

@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json.Serialization;
 using Westwind.AspNetCore.LiveReload;
 
 namespace GreenCabV1
@@ -37,12 +38,28 @@ namespace GreenCabV1
             services.AddMvc().AddViewOptions(options =>
             {
                 options.HtmlHelperOptions.ClientValidationEnabled = true;
-            });
+            })
+                .AddJsonOptions(opt => opt.SerializerSettings.ContractResolver
+              = new DefaultContractResolver());
+
+
+
+
             services.AddSession(options =>
             {
                 options.IdleTimeout = TimeSpan.FromMinutes(20);
                 options.Cookie.HttpOnly = true;
             });
+
+
+            services.AddCors(o => o.AddPolicy("AllowOrigin", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
+
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddSingleton<IComman, Common>();
             services.AddScoped<IAzureVideoStreamService, AzureVideoStreamService>();
@@ -76,6 +93,10 @@ namespace GreenCabV1
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            //   app.UseCors(options => options.WithOrigins("http://www.elitecorporatesolutions.com/"));
+            app.UseCors(
+              options => options.WithOrigins("*").AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin()
+               );
             app.UseSession();
             app.UseMvc(routes =>
             {

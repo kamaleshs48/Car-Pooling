@@ -8,4 +8,16 @@ namespace GreenCabV1.Models
 
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
     }
+    public class PersonModel
+    {
+        ///<summary>
+        /// Gets or sets Name.
+        ///</summary>
+        public string Name { get; set; }
+
+        ///<summary>
+        /// Gets or sets DateTime.
+        ///</summary>
+        public string DateTime { get; set; }
+    }
 }

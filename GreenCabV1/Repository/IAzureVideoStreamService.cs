@@ -9,5 +9,6 @@ namespace GreenCabV1.Repository
     public interface IAzureVideoStreamService
     {
         Task<Stream> GetVideoByName(string name);
+        Task<Stream> GetVideoUrl(string Url);
     }
 }
